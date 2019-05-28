@@ -1,40 +1,20 @@
 package models;
 
-import enums.Rank;
-import enums.Suit;
+import enums.Face;
 
 public class Card {
 
-	private Suit suit;
-	private Rank rank;
-	private int nextCardCount;
+	private Face face;
 
 	public Card() {
 			}
 
-	public Suit getSuit() {
-		return suit;
+	public Face getFace() {
+		return face;
 	}
 
-	public void setSuit(Suit suit) {
-		this.suit = suit;
+	public void setFace(Face face) {
+		this.face = face;
 	}
-
-	public Rank getRank() {
-		return rank;
-	}
-
-	public void setRank(Rank rank) {
-		this.rank = rank;
-	}
-
-	public int getNextCardCount() {
-		return nextCardCount;
-	}
-
-	public void setNextCardCount(int nextCardCount) {
-		this.nextCardCount = nextCardCount;
-	}
-
 	
 }
