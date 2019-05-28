@@ -7,7 +7,7 @@ public class Card {
 
 	private Suit suit;
 	private Rank rank;
-
+	private Face face;
 
 	public Card() {
 			}
