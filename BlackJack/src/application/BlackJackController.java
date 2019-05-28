@@ -17,7 +17,7 @@ public class BlackJackController {
     private Menu menu;
 
     @FXML
-    private MenuItem newGame, saveGame;
+     private MenuItem newGame, saveGame;
 
     @FXML
     private MenuItem loadGame;
