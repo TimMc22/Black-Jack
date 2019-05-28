@@ -1,5 +1,6 @@
 package models;
 
+import enums.Face;
 import enums.Rank;
 import enums.Suit;
 
@@ -7,9 +8,10 @@ public class Card {
 
 	private Suit suit;
 	private Rank rank;
+	private Face face;
 
 	public Card() {
-			}
+	}
 
 	public Suit getSuit() {
 		return suit;
@@ -26,5 +28,13 @@ public class Card {
 	public void setRank(Rank rank) {
 		this.rank = rank;
 	}
-	
+
+	public Face getFace() {
+		return face;
+	}
+
+	public void setFace(Face face) {
+		this.face = face;
+	}
+
 }
