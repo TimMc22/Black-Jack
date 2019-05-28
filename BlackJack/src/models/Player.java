@@ -10,7 +10,7 @@ public class Player {
 	private ArrayList<Card> hand = new ArrayList<>();
 
 	
-	public Player(String name) {w
+	public Player(String name) {
 		this.name = name;
 	}
 
