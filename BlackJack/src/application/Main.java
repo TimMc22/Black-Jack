@@ -10,8 +10,14 @@ import models.Player;
 
 
 public class Main extends Application {
+	
 	public static Player[] players;
+	public static Card[] playerCards = new Card[52];
+	public static Card[] dealerCards = new Card[52];
 	public static Deck deck = new Deck();
+	public static int numCard;  
+    public static int sum;   
+    public static int cardVal;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -34,16 +40,63 @@ public class Main extends Application {
 		return players;
 	}
 	
-	public static void gameStart() {
+	public static int getPlayerCards() {
+		numCard = 0;  
+        while(playerCards[numCard]!=null)
+        numCard++;
+        return numCard;
+
+	}
+	
+	public static int getDealerCards() {
+		numCard = 0; 
+		
+        while(dealerCards[numCard]!=null)
+        numCard++;
+        return numCard;
+
 		
 	}
 	
-	public static void gamePlay() {
-		
+	public static int getPlayerPoints() {
+		numCard = 0;
+		sum = 0;    
+		cardVal = 0;
+	    while(playerCards[numCard]!=null){
+	        cardVal = playerCards[numCard].getCardValue();
+	        if(cardVal == 1 && sum <= 10)
+	                cardVal = 11;
+	        else if(cardVal == 11)
+	                cardVal = 10;
+	        else if(cardVal == 12)
+	                cardVal = 10;
+	        else if(cardVal == 13)
+	                cardVal = 10;
+	        sum+=cardVal;
+	        numCard++;
+	    }  
+	    return sum;
+
 	}
 	
-	public static void dealerPlay() {
-		
+	public static int getDealerPoints() {
+		numCard = 0;
+		sum = 0;    
+		cardVal = 0;
+	    while(playerCards[numCard]!=null){
+	        cardVal = dealerCards[numCard].getCardValue();
+	        if(cardVal == 1 && sum <= 10)
+	                cardVal = 11;
+	        else if(cardVal == 11)
+	                cardVal = 10;
+	        else if(cardVal == 12)
+	                cardVal = 10;
+	        else if(cardVal == 13)
+	                cardVal = 10;
+	        sum+=cardVal;
+	        numCard++;
+	    }  
+	    return sum;
 	}
 
 	public static int makeBet() {
