@@ -32,7 +32,7 @@ public class Deck {
 		}
 	}
 
-	public void shuffle() {
+	public void shuffle() { 
 		for (int i = 0; i < deck.length; i++) {
 			int j = rng.nextInt(52) + 1;
 			Card filler = deck[i];
