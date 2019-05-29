@@ -9,6 +9,14 @@ public class Deck {
 	public Random rng = new Random();
 
 	public Deck() {
+		int index = 0;
+		for(int i = 0; i < 4; i++){
+			for(int j = 0; j < 13; j++){
+			Card a = new Card();
+			 deck[index] = a;
+			 index++;
+			}
+		}
 	}
 
 	public Card[] getDeck() {
