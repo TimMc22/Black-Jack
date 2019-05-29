@@ -104,10 +104,6 @@ public class Main extends Application {
 		return bet;
 	}
 	
-	public static Card[] dealCards() {
-		Card[] hand = new Card[2];
-		return hand;
-	}
 	
 	public static boolean askForHit() {
 		boolean wantHit = false;
