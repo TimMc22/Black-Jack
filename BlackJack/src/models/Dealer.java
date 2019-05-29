@@ -1,6 +1,6 @@
 package models;
 
-public class Dealer {
+public class Dealer extends Card {
 
 	private int chips;
 
