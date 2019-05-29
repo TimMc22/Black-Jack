@@ -13,7 +13,7 @@ public class Main extends Application {
 	
 	public static Player[] players;
 	public static Card[] playerCards = new Card[52];
-	public static Card[] dealerCards = new Card[52];
+	public static Card[] dealerCards = new Card[2];
 	public static Deck deck = new Deck();
 	public static int numCard;  
     public static int sum;   
