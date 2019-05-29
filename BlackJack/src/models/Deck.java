@@ -41,7 +41,6 @@ public class Deck {
 		}
 	}
 
-	public void reinsertCards(Card lastCard) {
-
+	public void reinsertCards() {
 	}
 }
