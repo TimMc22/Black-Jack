@@ -1,5 +1,6 @@
 package application;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,7 +10,9 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-public class BlackJackController {
+
+
+public class BlackJackController extends Main{
     @FXML
     private VBox vBox;
 
@@ -42,11 +45,7 @@ public class BlackJackController {
 
     @FXML
     private Button splitButton;
-    
-    @FXML
-    private void init() {
-    	
-    }
+
 
     @FXML
     void clickDoubleDown(ActionEvent event) {
@@ -55,7 +54,7 @@ public class BlackJackController {
 
     @FXML
     void clickHit(ActionEvent event) {
-
+    
     }
 
     @FXML
