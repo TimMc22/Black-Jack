@@ -49,7 +49,13 @@ public class Deck {
 		}
 	}
 
-	public void reinsertCards() {
-	
+	public Card reinsertCards() {
+		for(int i = 52; i < deck.length; i--) {
+			if(i == 0) {
+				return deck[52];
+			}
+		}
+		return null;
+		
 	}
 }
