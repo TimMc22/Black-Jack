@@ -1,7 +1,13 @@
 package application;
 	
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import models.Card;
@@ -19,6 +25,12 @@ public class Main extends Application {
     public static int sum;   
     public static int cardVal;
 	
+    public static JButton stay = new JButton("Stay"); 
+    public static JButton hit = new JButton("Hit");
+	private static JPanel drawPanel = new JPanel();
+
+    
+    
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -30,6 +42,11 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+		drawPanel.add(hit);
+		drawPanel.add(stay);
+		
+
 	}
 	
 	public static void main(String[] args) {
