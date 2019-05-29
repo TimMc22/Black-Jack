@@ -12,8 +12,8 @@ import models.Player;
 public class Main extends Application {
 	
 	public static Player[] players;
-	public static Card[] playerCards = new Card[52];
-	public static Card[] dealerCards = new Card[2];
+	public static Card[] playerCards = new Card[2];
+	public static Card[] dealerCards = new Card[52];
 	public static Deck deck = new Deck();
 	public static int numCard;  
     public static int sum;   
@@ -104,22 +104,6 @@ public class Main extends Application {
 		return bet;
 	}
 	
-	
-	public static boolean askForHit() {
-		boolean wantHit = false;
-		return wantHit;
-	}
-	
-	public static boolean askForStay() {
-		boolean wantStay = false;
-		return wantStay;
-	}
-	
-	public static boolean splitHand() {
-		boolean wantSplit = false;
-		return wantSplit;
-	}
-	
 	public static boolean doubleDown() {
 		boolean wantDoubleD = false;
 		return wantDoubleD;
@@ -127,6 +111,10 @@ public class Main extends Application {
 	
 	public static boolean bust() {
 		boolean isBust = false;
+		if(playerCards.length > 21) {
+			System.out.println("you have a bust");
+			isBust = true;
+		}
 		return isBust;
 	}
 	
