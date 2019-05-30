@@ -9,6 +9,14 @@ public class Deck {
 	public Random rng = new Random();
 
 	public Deck() {
+		int index = 0;
+		for(int i = 0; i < 4; i++){
+			for(int j = 0; j < 13; j++){
+			Card a = new Card();
+			 deck[index] = a;
+			 index++;
+			}
+		}
 	}
 
 	public Card[] getDeck() {
@@ -41,7 +49,13 @@ public class Deck {
 		}
 	}
 
-	public void reinsertCards() {
-	
+	public Card reinsertCards() {
+		for(int i = 52; i < deck.length; i--) {
+			if(i == 0) {
+				return deck[52];
+			}
+		}
+		return null;
+		
 	}
 }
