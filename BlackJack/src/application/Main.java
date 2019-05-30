@@ -83,7 +83,7 @@ public class Main extends Application {
 	                cardVal = 10;
 	        else if(cardVal == 13)
 	                cardVal = 10;
-	        sum+=cardVal;
+	        sum += cardVal;
 	        numCard++;
 	    }  
 	    return sum;
@@ -104,7 +104,7 @@ public class Main extends Application {
 	                cardVal = 10;
 	        else if(cardVal == 13)
 	                cardVal = 10;
-	        sum+=cardVal;
+	        sum += cardVal;
 	        numCard++;
 	    }  
 	    return sum;
@@ -112,6 +112,8 @@ public class Main extends Application {
 
 	public static int makeBet() {
 		int bet = 0;
+		
+		
 		return bet;
 	}
 	
