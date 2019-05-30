@@ -21,7 +21,7 @@ public class Main extends Application {
 	public static Card[] playerCards = new Card[2];
 	public static Card[] dealerCards = new Card[52];
 	public static Deck deck = new Deck();
-	public static Dealer dealer = new Dealer();
+	public static Dealer dealer = new Dealer(0);
 	public static int numCard;
 	public static int sum;
 	public static int cardVal;
