@@ -4,8 +4,6 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -22,7 +20,6 @@ import javafx.scene.layout.VBox;
 
 
 public class BlackJackController implements Initializable{
-	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players", "4 Players");
 
 	@FXML
     private VBox vBox;
@@ -43,16 +40,16 @@ public class BlackJackController implements Initializable{
     private MenuItem quit;
     
     @FXML
-    private MenuItem onePlayer;
+    private Button onePlayer;
     
     @FXML
-    private MenuItem twoPlayers;
+    private Button twoPlayers;
     
     @FXML
-    private MenuItem threePlayers;
+    private Button threePlayers;
     
     @FXML
-    private MenuItem fourPlayers;
+    private Button fourPlayers;
 
     @FXML
     private Pane numPlayersPane;
@@ -60,11 +57,6 @@ public class BlackJackController implements Initializable{
     @FXML
     private ComboBox<String> numPlayersBox;
     
-    @FXML
-    private void initialized() {
-    	numPlayersBox.setItems(options);
-    	numPlayersBox.setValue("Select Number of Players");
-    }
 
     @FXML
     private Button stayButton;
@@ -126,6 +118,26 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void stayClick(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void clickOnePlayer(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void clickTwoPlayes(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void clickThreePlayers(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void clickFourPlayers(ActionEvent event) {
 
     }
     
