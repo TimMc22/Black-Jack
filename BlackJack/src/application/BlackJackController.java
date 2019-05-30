@@ -1,6 +1,5 @@
 package application;
 
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -15,142 +14,135 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-	
-	
 
-
-public class BlackJackController implements Initializable{
+public class BlackJackController implements Initializable {
 
 	@FXML
-    private VBox vBox;
+	private VBox vBox;
 
-    @FXML
-    private MenuBar MenuBar;
-    
-    @FXML
-    private Menu menu;
+	@FXML
+	private MenuBar MenuBar;
 
-    @FXML
-     private MenuItem newGame, saveGame;
+	@FXML
+	private Menu menu;
 
-    @FXML
-    private MenuItem loadGame;
+	@FXML
+	private MenuItem newGame, saveGame;
 
-    @FXML
-    private MenuItem quit;
-    
-    @FXML
-    private Button onePlayer;
-    
-    @FXML
-    private Button twoPlayers;
-    
-    @FXML
-    private Button threePlayers;
-    
-    @FXML
-    private Button fourPlayers;
+	@FXML
+	private MenuItem loadGame;
 
-    @FXML
-    private Pane numPlayersPane;
+	@FXML
+	private MenuItem quit;
 
-    @FXML
-    private ComboBox<String> numPlayersBox;
-    
+	@FXML
+	private Button onePlayer;
 
-    @FXML
-    private Button stayButton;
+	@FXML
+	private Button twoPlayers;
 
-    @FXML
-    private Button hitButton;
+	@FXML
+	private Button threePlayers;
 
-    @FXML
-    private Button doubleDownButton;
+	@FXML
+	private Button fourPlayers;
 
-    @FXML
-    private Button splitButton;
+	@FXML
+	private Pane numPlayersPane;
 
+	@FXML
+	private ComboBox<String> numPlayersBox;
 
-    @FXML
-    void clickDoubleDown(ActionEvent event) {
+	@FXML
+	private Button stayButton;
 
-    }
+	@FXML
+	private Button hitButton;
 
-    @FXML
-    void clickHit(ActionEvent event) {
-    
-    }
+	@FXML
+	private Button doubleDownButton;
 
-    @FXML
-    void clickLoadGame(ActionEvent event) {
+	@FXML
+	private Button splitButton;
 
-    }
+	@FXML
+	void clickDoubleDown(ActionEvent event) {
 
-    @FXML
-    void clickMenu(ActionEvent event) {
+	}
 
-    }
+	@FXML
+	void clickHit(ActionEvent event) {
 
-    @FXML
-    void clickNewGame(ActionEvent event) {
+	}
 
-    }
+	@FXML
+	void clickLoadGame(ActionEvent event) {
 
-    @FXML
-    void clickQuit(ActionEvent event) {
+	}
 
-    }
+	@FXML
+	void clickMenu(ActionEvent event) {
 
-    @FXML
-    void clickSaveGame(ActionEvent event) {
+	}
 
-    }
+	@FXML
+	void clickNewGame(ActionEvent event) {
 
-    @FXML
-    void clickSplit(ActionEvent event) {
+	}
 
-    }
+	@FXML
+	void clickQuit(ActionEvent event) {
 
-    @FXML
-    void selectNumPlayers(ActionEvent event) {
+	}
 
-    }
+	@FXML
+	void clickSaveGame(ActionEvent event) {
 
-    @FXML
-    void stayClick(ActionEvent event) {
+	}
 
-    }
-    
-    @FXML
-    void clickOnePlayer(ActionEvent event) {
+	@FXML
+	void clickSplit(ActionEvent event) {
 
-    }
-    
-    @FXML
-    void clickTwoPlayes(ActionEvent event) {
+	}
 
-    }
-    
-    @FXML
-    void clickThreePlayers(ActionEvent event) {
+	@FXML
+	void selectNumPlayers(ActionEvent event) {
 
-    }
-    
-    @FXML
-    void clickFourPlayers(ActionEvent event) {
+	}
 
-    }
-    
-  
+	@FXML
+	void stayClick(ActionEvent event) {
+
+	}
+
+	@FXML
+	void clickOnePlayer(ActionEvent event) {
+
+	}
+
+	@FXML
+	void clickTwoPlayes(ActionEvent event) {
+
+	}
+
+	@FXML
+	void clickThreePlayers(ActionEvent event) {
+
+	}
+
+	@FXML
+	void clickFourPlayers(ActionEvent event) {
+
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		quit.setOnAction(new EventHandler<ActionEvent>() {
-		    @Override public void handle(ActionEvent e) {
-		        System.out.println("Opening Database Connection...");
-		    }
+			@Override
+			public void handle(ActionEvent e) {
+				System.out.println("Opening Database Connection...");
+			}
 		});
 	}
-
 
 }

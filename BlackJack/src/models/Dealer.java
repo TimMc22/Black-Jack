@@ -6,7 +6,8 @@ public class Dealer extends Card {
 
 	private int chips;
 
-	public Dealer() {
+	public Dealer(int chips) {
+		this.chips = chips;
 	}
 
 	public static Card[] dealHand() {
@@ -22,6 +23,17 @@ public class Dealer extends Card {
 	// need to populate
 	public ArrayList<Card> getHand() {
 		return null;
+
+	}
+
+	public boolean goBust() {
+		boolean isBust = false;
+		return isBust;
+	}
+
+	public boolean getBlackJack() {
+		boolean isBlackJack = false;
+		return isBlackJack;
 
 	}
 
