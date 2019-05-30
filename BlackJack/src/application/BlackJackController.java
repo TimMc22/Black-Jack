@@ -41,6 +41,18 @@ public class BlackJackController implements Initializable{
 
     @FXML
     private MenuItem quit;
+    
+    @FXML
+    private MenuItem onePlayer;
+    
+    @FXML
+    private MenuItem twoPlayers;
+    
+    @FXML
+    private MenuItem threePlayers;
+    
+    @FXML
+    private MenuItem fourPlayers;
 
     @FXML
     private Pane numPlayersPane;
