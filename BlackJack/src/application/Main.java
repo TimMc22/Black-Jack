@@ -15,7 +15,6 @@ import models.Deck;
 import models.Player;
 
 public class Main extends Application {
-
 	public static Player[] players;
 	public static Card[] playerCards = new Card[52];
 	public static Card[] dealerCards = new Card[2];
@@ -47,7 +46,6 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
-
 		launch(args);
 	}
 
@@ -83,6 +81,12 @@ public class Main extends Application {
 	public static void gamePlay(Player[] players) {
 		for (int i = 0; i < players.length; i++) {
 			Dealer.dealHand();
+			boolean canSplit = checkForSplit(players[i]);
+			
+			//tell gui to ask for split here
+			if(canSplit) {
+				splitHand(players[i].getHand(), players[i]);
+			}
 		}
 		int stayCount = 0;
 		boolean[] stay = new boolean[players.length];
@@ -92,9 +96,18 @@ public class Main extends Application {
 					stayCount++;
 				}
 				// ask each player to choose hit, stay, split, or double down
-			} while (stayCount < players.length);
+			} while (stayCount != players.length);
 		}
 		dealerPlay();
+	}
+	
+	public static boolean checkForSplit(Player player) {
+		ArrayList<Card> hand = player.getHand();
+		if(hand.get(0) == hand.get(1)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public static int getPlayerCards() {
@@ -155,7 +168,19 @@ public class Main extends Application {
 	}
 
 	public static int askForBet(Player player) {
-		int bet = 0;
+		// need logic for betting to communicate with the GUI
+		boolean betValid = false;
+		int bet = 10;
+		do {
+			//ask for bet
+		if (bet < player.getChips()) {
+			bet = 10;
+			player.setBet(bet);
+			betValid = true;
+		} else {
+			// message saying bet is invalid
+		}
+		} while(!betValid);
 		return bet;
 	}
 
@@ -182,20 +207,20 @@ public class Main extends Application {
 		hand.add(nextCard);
 		if (hand.get(0).getValue() + hand.get(1).getValue() + nextCard.getValue() > 21) {
 			bust(player);
-
 		} else if (hand.get(0).getValue() + hand.get(1).getValue() + nextCard.getValue() == 21) {
 			getBlackjack(player);
 		} else {
+			
 		}
 		return hand;
 	}
 
-	public static boolean askForHit() {
+	public static boolean askForHit(Player player) {
 		boolean wantHit = false;
 		return wantHit;
 	}
 
-	public static boolean askForStay() {
+	public static boolean askForStay(Player player) {
 		boolean wantStay = false;
 		return wantStay;
 	}
@@ -213,10 +238,7 @@ public class Main extends Application {
 	}
 
 	public static void bust(Player player) {
-		int chips = player.getChips();
-		// add odds here
-		int odds = 1;
-		player.setChips(chips = player.getBet() * odds);
+		lose(player);
 	}
 
 	public static void win(Player player) {
@@ -227,20 +249,19 @@ public class Main extends Application {
 	}
 
 	public static void lose(Player player) {
-		int chips = player.getChips();
-
-		// add odds here
-		int odds = 1;
-		player.setChips(chips = player.getBet() * odds);
+		int chipsLost = player.getBet();
+		player.setChips(player.getChips() - chipsLost);
 
 	}
 
-	public static void getBlackjack(Player player) {
-		int chips = player.getChips();
-		// multiply odds here
-		int odds = 1;
+	public static void push(Player player) {
+		player.setChips(player.getChips());
+	}
 
-		player.setChips(chips + player.getBet() * odds);
+	public static void getBlackjack(Player player) {
+		int chipsWon = player.getBet() * 2;
+
+		player.setChips(chipsWon + player.getChips());
 	}
 
 	public static void saveChips() {
