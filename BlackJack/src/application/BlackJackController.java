@@ -23,7 +23,7 @@ import javafx.scene.layout.VBox;
 public class BlackJackController implements Initializable{
 	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players", "4 Players");
 
-	@FXML
+    @FXML
     private VBox vBox;
 
     @FXML
