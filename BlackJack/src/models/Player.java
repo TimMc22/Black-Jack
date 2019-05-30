@@ -2,12 +2,14 @@ package models;
 
 import java.util.ArrayList;
 
+
 public class Player {
 
 	private String name;
 	// have it so every player starts with 100 chips
 	private int chips = 100;
 	private ArrayList<Card> hand = new ArrayList<>();
+	private int bet;
 
 	public Player(String name) {
 		this.name = name;
@@ -22,18 +24,18 @@ public class Player {
 	}
 
 	public int getChips() {
-		if(chips <= 0) {
+		if (chips <= 0) {
 			goBust();
 			return 0;
 		} else {
-			return chips;			
+			return chips;
 		}
 	}
 
 	public void setChips(int chips) {
 		this.chips = chips;
 	}
-	
+
 	public ArrayList<Card> getHand() {
 		return hand;
 	}
@@ -51,9 +53,8 @@ public class Player {
 
 	}
 
-	public int placeBet() {
-		int bet = 0;
-		return bet;
+	public static void placeBet(int bet) {
+
 	}
 
 	public Card hit() {
@@ -62,14 +63,23 @@ public class Player {
 		return card;
 	}
 
-	
 	public void stay(boolean stay) {
-		if(stay) {
-			//no card dealt
+		if (stay) {
+			// no card dealt
 		} else {
 			hit();
 		}
 	}
+
+	public int getBet() {
+		return bet;
+	}
+
+	public void setBet(int bet) {
+		this.bet = bet;
+	}
+
+
 
 	@Override
 	public String toString() {
@@ -78,5 +88,6 @@ public class Player {
 		sb.append("Chips Remaining: ").append(getChips());
 		return sb.toString();
 	}
+
 
 }

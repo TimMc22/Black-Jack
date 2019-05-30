@@ -1,27 +1,50 @@
 package models;
 
-import enums.Face;
+import enums.Rank;
+import enums.Suit;
 
 public class Card {
 
-	private Face face;
+	private Rank rank;
+	private Suit suit;
+	private int value = 0;
 
 	private int cardValue;
 
 	public Card() {
-		setCardValue(0);
+		setCardValue(0); 
 	}
 
 	public Card(int suit, int val) {
 		setCardValue(val);
 	}
 
-	public Face getFace() {
-		return face;
+	public int getValue() {
+		return value;
 	}
 
-	public void setFace(Face face) {
-		this.face = face;
+	public void setValue(int value) {
+		this.value = value;
+	}
+
+	public void checkAceValue() {
+		
+	}
+
+	public Rank getRank() {
+		return rank;
+	}
+
+	public void setRank(Rank rank) {
+		this.rank = rank;
+	}
+
+	public Suit getSuit() {
+		return suit;
+	}
+
+	public void setSuit(Suit suit) {
+		this.suit = suit;
 	}
 
 	public void setCardValue(int val) {

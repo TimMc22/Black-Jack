@@ -1,14 +1,15 @@
 package models;
 
+import java.util.ArrayList;
+
 public class Dealer {
 
 	private int chips;
 
-	public Dealer(int chips) {
-		this.chips = chips;
+	public Dealer() {
 	}
 
-	public Card[] dealHand() {
+	public static Card[] dealHand() {
 		Card[] hand = new Card[2];
 		return hand;
 	}
@@ -18,14 +19,9 @@ public class Dealer {
 		return card;
 	}
 
-	public boolean goBust() {
-		boolean isBust = false;
-		return isBust;
-	}
-
-	public boolean getBlackJack() {
-		boolean isBlackJack = false;
-		return isBlackJack;
+	//need to populate
+	public ArrayList<Card> getHand() {
+		
 	}
 
 	@Override
@@ -35,5 +31,6 @@ public class Dealer {
 		sb.append("Chips Remaining: ").append(chips);
 		return sb.toString();
 	}
+
 
 }
