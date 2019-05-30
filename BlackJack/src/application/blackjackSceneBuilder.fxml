@@ -31,6 +31,10 @@
             <Pane fx:id="numPlayersPane" layoutX="412.0" layoutY="31.0" prefHeight="190.0" prefWidth="176.0">
                <children>
                   <ComboBox fx:id="numPlayersBox" onAction="#selectNumPlayers" prefHeight="26.0" prefWidth="174.0" promptText="Select Number of Players" />
+                        <MenuItem fx:id="1Player" mnemonicParsing="false" onAction="#clickSaveGame" text="1 Player" />
+                  		<MenuItem fx:id="2Players" mnemonicParsing="false" onAction="#clickSaveGame" text="2 Player" />
+                  		<MenuItem fx:id="3Players" mnemonicParsing="false" onAction="#clickSaveGame" text="3 Player" />
+                  		<MenuItem fx:id="4Players" mnemonicParsing="false" onAction="#clickSaveGame" text="4 Player" />
                </children>
             </Pane>
       </children>
