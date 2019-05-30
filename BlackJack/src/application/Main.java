@@ -82,11 +82,14 @@ public class Main extends Application {
 		for (int i = 0; i < players.length; i++) {
 			Dealer.dealHand();
 			boolean canSplit = checkForSplit(players[i]);
-			
-			//tell gui to ask for split here
-			if(canSplit) {
+
+			// tell gui to ask for split here
+			if (canSplit) {
 				splitHand(players[i].getHand(), players[i]);
+			} else {
+				getPlayerPoints(players[i]);
 			}
+
 		}
 		int stayCount = 0;
 		boolean[] stay = new boolean[players.length];
@@ -100,10 +103,10 @@ public class Main extends Application {
 		}
 		dealerPlay();
 	}
-	
+
 	public static boolean checkForSplit(Player player) {
 		ArrayList<Card> hand = player.getHand();
-		if(hand.get(0) == hand.get(1)) {
+		if (hand.get(0) == hand.get(1)) {
 			return true;
 		} else {
 			return false;
@@ -127,44 +130,26 @@ public class Main extends Application {
 
 	}
 
-	public static int getPlayerPoints() {
-		numCard = 0;
-		sum = 0;
-		cardVal = 0;
-		while (playerCards[numCard] != null) {
-			cardVal = playerCards[numCard].getCardValue();
-			if (cardVal == 1 && sum <= 10)
-				cardVal = 11;
-			else if (cardVal == 11)
-				cardVal = 10;
-			else if (cardVal == 12)
-				cardVal = 10;
-			else if (cardVal == 13)
-				cardVal = 10;
-			sum += cardVal;
-			numCard++;
+	public static int getPlayerPoints(Player player) {
+		ArrayList<Card> hand = player.getHand();
+		int totalValue = hand.get(0).getRank().value + hand.get(1).getRank().value;
+		if (hand.get(0).getRank().value == 1 && sum <= 10) {
+			totalValue = hand.get(1).getRank().value + 11;
+		} else if (hand.get(1).getRank().value == 1 && sum <= 10) {
+			totalValue = hand.get(0).getRank().value + 11;
 		}
-		return sum;
+		return totalValue;
 	}
 
 	public static int getDealerPoints() {
-		numCard = 0;
-		sum = 0;
-		cardVal = 0;
-		while (playerCards[numCard] != null) {
-			cardVal = dealerCards[numCard].getCardValue();
-			if (cardVal == 1 && sum <= 10)
-				cardVal = 11;
-			else if (cardVal == 11)
-				cardVal = 10;
-			else if (cardVal == 12)
-				cardVal = 10;
-			else if (cardVal == 13)
-				cardVal = 10;
-			sum += cardVal;
-			numCard++;
+		ArrayList<Card> hand = dealer.getHand();
+		int totalValue = hand.get(0).getRank().value + hand.get(1).getRank().value;
+		if (hand.get(0).getRank().value == 1 && sum <= 10) {
+			totalValue = hand.get(1).getRank().value + 11;
+		} else if (hand.get(1).getRank().value == 1 && sum <= 10) {
+			totalValue = hand.get(0).getRank().value + 11;
 		}
-		return sum;
+		return totalValue;
 	}
 
 	public static int askForBet(Player player) {
@@ -172,15 +157,15 @@ public class Main extends Application {
 		boolean betValid = false;
 		int bet = 10;
 		do {
-			//ask for bet
-		if (bet < player.getChips()) {
-			bet = 10;
-			player.setBet(bet);
-			betValid = true;
-		} else {
-			// message saying bet is invalid
-		}
-		} while(!betValid);
+			// ask for bet
+			if (bet < player.getChips()) {
+				bet = 10;
+				player.setBet(bet);
+				betValid = true;
+			} else {
+				// message saying bet is invalid
+			}
+		} while (!betValid);
 		return bet;
 	}
 
@@ -210,7 +195,7 @@ public class Main extends Application {
 		} else if (hand.get(0).getValue() + hand.get(1).getValue() + nextCard.getValue() == 21) {
 			getBlackjack(player);
 		} else {
-			
+
 		}
 		return hand;
 	}
