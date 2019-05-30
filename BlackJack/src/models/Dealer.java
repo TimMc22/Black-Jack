@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Dealer {
 
+
 	private int chips;
 
 	public Dealer() {
