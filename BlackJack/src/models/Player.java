@@ -2,14 +2,12 @@ package models;
 
 import java.util.ArrayList;
 
-import enums.ChipsValues;
 
 public class Player {
 
 	private String name;
 	// have it so every player starts with 100 chips
 	private int chips = 100;
-	private ChipsValues chipsValue = ChipsValues.BLACK;
 	private ArrayList<Card> hand = new ArrayList<>();
 	private int bet;
 
@@ -81,13 +79,7 @@ public class Player {
 		this.bet = bet;
 	}
 
-	public ChipsValues getHipsValues() {
-		return chipsValue;
-	}
 
-	public void setHipsValues(ChipsValues chipsValue) {
-		this.chipsValue = chipsValue;
-	}
 
 	@Override
 	public String toString() {
