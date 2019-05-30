@@ -4,23 +4,32 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-
-
-
-public class BlackJackController implements Initializable {
 	
-    @FXML
+	
+
+
+public class BlackJackController implements Initializable{
+	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players", "4 Players");
+
+	@FXML
     private VBox vBox;
 
+    @FXML
+    private MenuBar MenuBar;
+    
     @FXML
     private Menu menu;
 
@@ -37,7 +46,13 @@ public class BlackJackController implements Initializable {
     private Pane numPlayersPane;
 
     @FXML
-    private ComboBox<Integer> numPlayersBox;
+    private ComboBox<String> numPlayersBox;
+    
+    @FXML
+    private void initialized() {
+    	numPlayersBox.setItems(options);
+    	numPlayersBox.setValue("Select Number of Players");
+    }
 
     @FXML
     private Button stayButton;
@@ -101,11 +116,17 @@ public class BlackJackController implements Initializable {
     void stayClick(ActionEvent event) {
 
     }
+    
+  
 
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
+	public void initialize(URL location, ResourceBundle resources) {
+		quit.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		        System.out.println("Opening Database Connection...");
+		    }
+		});
 	}
+
 
 }

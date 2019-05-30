@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 
+
 public class Player {
 
 	private String name;
@@ -78,6 +79,8 @@ public class Player {
 		this.bet = bet;
 	}
 
+
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -85,5 +88,6 @@ public class Player {
 		sb.append("Chips Remaining: ").append(getChips());
 		return sb.toString();
 	}
+
 
 }
