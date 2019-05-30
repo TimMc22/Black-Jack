@@ -21,6 +21,7 @@ public class Dealer {
 
 	//need to populate
 	public ArrayList<Card> getHand() {
+		return null;
 		
 	}
 
