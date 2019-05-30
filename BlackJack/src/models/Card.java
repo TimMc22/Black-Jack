@@ -12,7 +12,7 @@ public class Card {
 	private int cardValue;
 
 	public Card() {
-		setCardValue(0);
+		setCardValue(0); 
 	}
 
 	public Card(int suit, int val) {
