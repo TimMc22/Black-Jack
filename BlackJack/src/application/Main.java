@@ -2,12 +2,14 @@ package application;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import models.Card;
 import models.Dealer;
@@ -16,8 +18,8 @@ import models.Player;
 
 public class Main extends Application {
 	public static Player[] players;
-	public static Card[] playerCards = new Card[52];
-	public static Card[] dealerCards = new Card[2];
+	public static Card[] playerCards = new Card[2];
+	public static Card[] dealerCards = new Card[52];
 	public static Deck deck = new Deck();
 	public static Dealer dealer = new Dealer();
 	public static int numCard;
@@ -27,11 +29,15 @@ public class Main extends Application {
 	public static JButton stay = new JButton("Stay");
 	public static JButton hit = new JButton("Hit");
 	private static JPanel drawPanel = new JPanel();
+	public static JButton hitButton = new JButton("Hit");
+	public static JButton stayButton = new JButton("Hit");
+	public static JPanel panel = new JPanel();
 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
+			VBox root = (VBox) FXMLLoader.load(getClass().getResource("/application/blackjackSceneBuilder.fxml"));
+//			BorderPane root = new BorderPane();
 			Scene scene = new Scene(root, 400, 400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -42,6 +48,8 @@ public class Main extends Application {
 
 		drawPanel.add(hit);
 		drawPanel.add(stay);
+		panel.add(hitButton);
+		panel.add(stayButton);
 
 	}
 
@@ -217,20 +225,30 @@ public class Main extends Application {
 		return hands;
 	}
 
+	public static int makeBet() {
+		int bet = 0;
+
+		return bet;
+	}
+
 	public static boolean doubleDown() {
 		boolean wantDoubleD = false;
 		return wantDoubleD;
 	}
 
-	public static void bust(Player player) {
-		lose(player);
+	public static void win(Player player) {
+		getBlackjack(player);
 	}
 
-	public static void win(Player player) {
-		int chips = player.getChips();
-		// add odds here
-		int odds = 1;
-		player.setChips(chips = player.getBet() * odds);
+	
+	//needs fixed
+	public static boolean bust(Player player) {
+		boolean isBust = false;
+		if (playerCards.length > 21) {
+			System.out.println("you have a bust");
+			isBust = true;
+		}
+		return isBust;
 	}
 
 	public static void lose(Player player) {

@@ -1,28 +1,34 @@
 package application;
 
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-
-
-
-public class BlackJackController extends Main{
 	
 	
+
+
+public class BlackJackController implements Initializable{
 	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players", "4 Players");
 
-	
-    @FXML
+	@FXML
     private VBox vBox;
 
+    @FXML
+    private MenuBar MenuBar;
+    
     @FXML
     private Menu menu;
 
@@ -111,5 +117,14 @@ public class BlackJackController extends Main{
     }
     
   
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		quit.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		        System.out.println("Opening Database Connection...");
+		    }
+		});
+	}
 
 }
