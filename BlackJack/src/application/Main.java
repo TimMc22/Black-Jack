@@ -259,7 +259,7 @@ public class Main extends Application {
 	}
 
 	public static void getBlackjack(Player player) {
-		int chipsWon = player.getBet() * 2;
+		int chipsWon = player.getChips() * 2;
 
 		player.setChips(chipsWon + player.getChips());
 	}
