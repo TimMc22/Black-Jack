@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 public class Dealer {
 
 	private int chips;
@@ -17,6 +19,11 @@ public class Dealer {
 		return card;
 	}
 
+	//need to populate
+	public ArrayList<Card> getHand() {
+		
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -24,5 +31,6 @@ public class Dealer {
 		sb.append("Chips Remaining: ").append(chips);
 		return sb.toString();
 	}
+
 
 }
