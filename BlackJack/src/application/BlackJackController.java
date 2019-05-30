@@ -1,6 +1,8 @@
 package application;
 
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,6 +15,11 @@ import javafx.scene.layout.VBox;
 
 
 public class BlackJackController extends Main{
+	
+	
+	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players", "4 Players");
+
+	
     @FXML
     private VBox vBox;
 
@@ -32,7 +39,13 @@ public class BlackJackController extends Main{
     private Pane numPlayersPane;
 
     @FXML
-    private ComboBox<Integer> numPlayersBox;
+    private ComboBox<String> numPlayersBox;
+    
+    @FXML
+    private void initialized() {
+    	numPlayersBox.setItems(options);
+    	numPlayersBox.setValue("Select Number of Players");
+    }
 
     @FXML
     private Button stayButton;
@@ -96,5 +109,7 @@ public class BlackJackController extends Main{
     void stayClick(ActionEvent event) {
 
     }
+    
+  
 
 }
