@@ -1,8 +1,12 @@
 package application;
 
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Menu;
@@ -12,7 +16,8 @@ import javafx.scene.layout.VBox;
 
 
 
-public class BlackJackController extends Main{
+public class BlackJackController implements Initializable {
+	
     @FXML
     private VBox vBox;
 
@@ -96,5 +101,11 @@ public class BlackJackController extends Main{
     void stayClick(ActionEvent event) {
 
     }
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
