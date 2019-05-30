@@ -2,6 +2,8 @@ package application;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -13,9 +15,19 @@ import models.Deck;
 import models.Player;
 
 public class Main extends Application {
+
 	public static Player[] players;
+	public static Card[] playerCards = new Card[52];
+	public static Card[] dealerCards = new Card[2];
 	public static Deck deck = new Deck();
 	public static Dealer dealer = new Dealer();
+	public static int numCard;
+	public static int sum;
+	public static int cardVal;
+
+	public static JButton stay = new JButton("Stay");
+	public static JButton hit = new JButton("Hit");
+	private static JPanel drawPanel = new JPanel();
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -28,6 +40,10 @@ public class Main extends Application {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+		drawPanel.add(hit);
+		drawPanel.add(stay);
+
 	}
 
 	public static void main(String[] args) {
@@ -42,10 +58,10 @@ public class Main extends Application {
 		int numPlayers = 3;
 		// info from dropdown menu
 		for (int i = 0; i < numPlayers; i++) {
-			
+
 			// ask for name
 			String name = "Name";
-			
+
 			Player player = new Player(name);
 			players[i] = player;
 		}
@@ -81,6 +97,63 @@ public class Main extends Application {
 		dealerPlay();
 	}
 
+	public static int getPlayerCards() {
+		numCard = 0;
+		while (playerCards[numCard] != null)
+			numCard++;
+		return numCard;
+
+	}
+
+	public static int getDealerCards() {
+		numCard = 0;
+
+		while (dealerCards[numCard] != null)
+			numCard++;
+		return numCard;
+
+	}
+
+	public static int getPlayerPoints() {
+		numCard = 0;
+		sum = 0;
+		cardVal = 0;
+		while (playerCards[numCard] != null) {
+			cardVal = playerCards[numCard].getCardValue();
+			if (cardVal == 1 && sum <= 10)
+				cardVal = 11;
+			else if (cardVal == 11)
+				cardVal = 10;
+			else if (cardVal == 12)
+				cardVal = 10;
+			else if (cardVal == 13)
+				cardVal = 10;
+			sum += cardVal;
+			numCard++;
+		}
+		return sum;
+	}
+
+	public static int getDealerPoints() {
+		numCard = 0;
+		sum = 0;
+		cardVal = 0;
+		while (playerCards[numCard] != null) {
+			cardVal = dealerCards[numCard].getCardValue();
+			if (cardVal == 1 && sum <= 10)
+				cardVal = 11;
+			else if (cardVal == 11)
+				cardVal = 10;
+			else if (cardVal == 12)
+				cardVal = 10;
+			else if (cardVal == 13)
+				cardVal = 10;
+			sum += cardVal;
+			numCard++;
+		}
+		return sum;
+	}
+
 	public static int askForBet(Player player) {
 		int bet = 0;
 		return bet;
@@ -95,6 +168,7 @@ public class Main extends Application {
 				handValue += hit.getValue();
 			}
 		} while (handValue < 17);
+
 		return handValue;
 	}
 
@@ -116,7 +190,16 @@ public class Main extends Application {
 		return hand;
 	}
 
-	
+	public static boolean askForHit() {
+		boolean wantHit = false;
+		return wantHit;
+	}
+
+	public static boolean askForStay() {
+		boolean wantStay = false;
+		return wantStay;
+	}
+
 	public static HashMap<Card, Card> splitHand(ArrayList<Card> hand, Player player) {
 		HashMap<Card, Card> hands = new HashMap<>();
 		hands.put(hand.get(0), Dealer.dealCard());
@@ -161,7 +244,7 @@ public class Main extends Application {
 	}
 
 	public static void saveChips() {
-		
+
 	}
 
 	public static void loadChips() {

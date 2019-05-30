@@ -9,7 +9,14 @@ public class Card {
 	private Suit suit;
 	private int value = 0;
 
+	private int cardValue;
+
 	public Card() {
+		setCardValue(0);
+	}
+
+	public Card(int suit, int val) {
+		setCardValue(val);
 	}
 
 	public int getValue() {
@@ -39,4 +46,13 @@ public class Card {
 	public void setSuit(Suit suit) {
 		this.suit = suit;
 	}
+
+	public void setCardValue(int val) {
+		cardValue = val;
+	}
+
+	public int getCardValue() {
+		return cardValue;
+	}
+
 }
