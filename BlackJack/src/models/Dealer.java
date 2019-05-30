@@ -2,7 +2,7 @@ package models;
 
 import java.util.ArrayList;
 
-public class Dealer {
+public class Dealer extends Card {
 
 	private int chips;
 
@@ -19,10 +19,10 @@ public class Dealer {
 		return card;
 	}
 
-	//need to populate
+	// need to populate
 	public ArrayList<Card> getHand() {
 		return null;
-		
+
 	}
 
 	@Override
@@ -32,6 +32,5 @@ public class Dealer {
 		sb.append("Chips Remaining: ").append(chips);
 		return sb.toString();
 	}
-
 
 }
