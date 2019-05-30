@@ -1,6 +1,8 @@
 package models;
 
-public class Chip {
+import java.io.Serializable;
+
+public class Chip implements Serializable{
 
 	private int value;
 
