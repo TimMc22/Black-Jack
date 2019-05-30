@@ -103,7 +103,6 @@ public class Main extends Application {
 		}
 		dealerPlay();
 	}
-	
 
 	public static boolean checkForSplit(Player player) {
 		ArrayList<Card> hand = player.getHand();
