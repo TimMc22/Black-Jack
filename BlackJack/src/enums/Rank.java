@@ -16,6 +16,7 @@ package enums;
 		ACE(11);
 		
 		public final int value;
+		
 		private Rank(int value) {
 			this.value = value;
 		}

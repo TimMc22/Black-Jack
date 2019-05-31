@@ -2,10 +2,8 @@ package application;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -21,14 +19,14 @@ public class Main extends Application {
 	public static Card[] playerCards = new Card[2];
 	public static Card[] dealerCards = new Card[52];
 	public static Deck deck = new Deck();
-	public static Dealer dealer = new Dealer();
+	public static Dealer dealer = new Dealer(0);
 	public static int numCard;
 	public static int sum;
 	public static int cardVal;
 
 	public static JButton stay = new JButton("Stay");
 	public static JButton hit = new JButton("Hit");
-	private static JPanel drawPanel = new JPanel();
+	public static JPanel drawPanel = new JPanel();
 	public static JButton hitButton = new JButton("Hit");
 	public static JButton stayButton = new JButton("Hit");
 	public static JPanel panel = new JPanel();
@@ -38,7 +36,7 @@ public class Main extends Application {
 		try {
 			VBox root = (VBox) FXMLLoader.load(getClass().getResource("/application/blackjackSceneBuilder.fxml"));
 //			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root, 400, 400);
+			Scene scene = new Scene(root, 1000, 1000);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
@@ -236,8 +234,7 @@ public class Main extends Application {
 		getBlackjack(player);
 	}
 
-	
-	//needs fixed
+	// needs fixed
 	public static boolean bust(Player player) {
 		boolean isBust = false;
 		if (playerCards.length > 21) {
