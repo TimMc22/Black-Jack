@@ -3,6 +3,7 @@ package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,8 +15,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import lib.ConsoleIO;
+import models.Player;
 	
 	
 
@@ -43,9 +47,25 @@ public class BlackJackController implements Initializable{
 
     @FXML
     private Pane numPlayersPane;
+    
+    @FXML
+    private MenuItem onePlayer;
+    
+    @FXML
+    private MenuItem twoPlayers;
+    
+    @FXML
+    private MenuItem threePlayers;
+    
+    @FXML
+    private MenuItem fourPlayers;
 
     @FXML
     private ComboBox<String> numPlayersBox;
+    
+//    @FXML
+//    private TextField text;
+    
     
     @FXML
     private void initialized() {
@@ -78,7 +98,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void clickLoadGame(ActionEvent event) {
-
+//    	Main.players = (Player[]) ConsoleIO.DeSerialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", Main.players);
     }
 
     @FXML
@@ -98,7 +118,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void clickSaveGame(ActionEvent event) {
-
+//    	ConsoleIO.Serialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", Main.players);
     }
 
     @FXML

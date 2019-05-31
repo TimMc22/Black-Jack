@@ -5,12 +5,13 @@ public class Dealer {
 
 
 	private int chips;
-
-	public Dealer(int chips) {
-		this.chips = chips;
+	
+	
+	public Dealer() {
+		
 	}
 
-	public Card[] dealHand() {
+	public static Card[] dealHand() {
 		Card[] hand = new Card[2];
 		return hand;
 	}
