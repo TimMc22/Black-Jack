@@ -2,13 +2,15 @@ package application;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import javax.swing.JButton;
-import javax.swing.JPanel;
+//import javax.swing.JButton;
+//import javax.swing.JPanel;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import models.Card;
 import models.Dealer;
 import models.Deck;
@@ -24,13 +26,6 @@ public class Main extends Application {
 	public static int sum;
 	public static int cardVal;
 
-	public static JButton stay = new JButton("Stay");
-	public static JButton hit = new JButton("Hit");
-	public static JPanel drawPanel = new JPanel();
-	public static JButton hitButton = new JButton("Hit");
-	public static JButton stayButton = new JButton("Hit");
-	public static JPanel panel = new JPanel();
-
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -43,11 +38,6 @@ public class Main extends Application {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		drawPanel.add(hit);
-		drawPanel.add(stay);
-		panel.add(hitButton);
-		panel.add(stayButton);
 
 	}
 
