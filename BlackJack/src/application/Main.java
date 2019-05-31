@@ -2,10 +2,8 @@ package application;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -240,8 +238,7 @@ public class Main extends Application {
 		getBlackjack(player);
 	}
 
-	
-	//needs fixed
+	// needs fixed
 	public static boolean bust(Player player) {
 		boolean isBust = false;
 		if (playerCards.length > 21) {
