@@ -3,6 +3,7 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -20,9 +21,15 @@ public class BlackJackController implements Initializable {
 
 	@FXML
 	private MenuBar MenuBar;
+	
+	@FXML
+	private MenuBar numPlayersPane;
 
 	@FXML
 	private Menu menu;
+	
+	@FXML
+	private Menu numPlayersMenu;
 
 	@FXML
 	private MenuItem newGame, saveGame;
@@ -44,6 +51,7 @@ public class BlackJackController implements Initializable {
 
 	@FXML
 	private MenuItem fourPlayers;
+
 
 	@FXML
 	private Button stayButton;
