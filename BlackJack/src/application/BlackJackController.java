@@ -72,7 +72,7 @@ public class BlackJackController implements Initializable {
 
 	@FXML
 	void clickHit(ActionEvent event) {
-
+		System.out.println("Hit clicket");
 	}
 
 	@FXML
