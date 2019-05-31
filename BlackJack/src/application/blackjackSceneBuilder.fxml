@@ -3,12 +3,10 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -55,6 +53,24 @@
 							onAction="#clickSaveGame" text="4 Player" />
 					</children>
 				</Pane>
+				<MenuBar fx:id="MenuBar" layoutX="379.0" layoutY="43.0"
+					VBox.vgrow="NEVER">
+					<menus>
+						<Menu fx:id="menu" mnemonicParsing="false"
+							onAction="#clickMenu" text="Selet Number of Players">
+							<items>
+								<MenuItem fx:id="onePlayer" mnemonicParsing="false"
+									onAction="#clickOnePlayer" text="1 Player" />
+								<MenuItem fx:id="twoPlayers" mnemonicParsing="false"
+									onAction="#clickTwoPlayes" text="2 Players" />
+								<MenuItem fx:id="threePlayers" mnemonicParsing="false"
+									onAction="#clickThreePlayers" text="3 Players" />
+								<MenuItem fx:id="fourPlayers" mnemonicParsing="false"
+									onAction="#clickFourPlayers" text="4 Players" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
 			</children>
 		</AnchorPane>
 		<ButtonBar buttonMinWidth="0.0" prefHeight="200.0"

@@ -2,8 +2,7 @@ package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -17,8 +16,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class BlackJackController implements Initializable {
-	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players",
-			"4 Players");
+//	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players",
+//			"4 Players");
 
 	@FXML
 	private VBox vBox;
@@ -58,7 +57,7 @@ public class BlackJackController implements Initializable {
 
 	@FXML
 	private void initialized() {
-		numPlayersBox.setItems(options);
+		numPlayersBox.setItems(null);
 		numPlayersBox.setValue("Select Number of Players");
 	}
 
@@ -121,6 +120,26 @@ public class BlackJackController implements Initializable {
 
 	@FXML
 	void stayClick(ActionEvent event) {
+
+	}
+
+	@FXML
+	void clickOnePlayer(ActionEvent event) {
+
+	}
+
+	@FXML
+	void clickTwoPlayes(ActionEvent event) {
+
+	}
+
+	@FXML
+	void clickThreePlayers(ActionEvent event) {
+
+	}
+
+	@FXML
+	void clickFourPlayers(ActionEvent event) {
 
 	}
 
