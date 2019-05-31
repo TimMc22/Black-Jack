@@ -8,11 +8,9 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class BlackJackController implements Initializable {
@@ -46,12 +44,6 @@ public class BlackJackController implements Initializable {
 
 	@FXML
 	private MenuItem fourPlayers;
-
-	@FXML
-	private Pane numPlayersPane;
-
-	@FXML
-	private ComboBox<String> numPlayersBox;
 
 	@FXML
 	private Button stayButton;
@@ -117,7 +109,7 @@ public class BlackJackController implements Initializable {
 
 	@FXML
 	void clickOnePlayer(ActionEvent event) {
-
+		
 	}
 
 	@FXML
