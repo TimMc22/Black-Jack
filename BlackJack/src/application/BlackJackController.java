@@ -109,7 +109,7 @@ public class BlackJackController implements Initializable {
 
 	@FXML
 	void clickOnePlayer(ActionEvent event) {
-		
+
 	}
 
 	@FXML
