@@ -45,13 +45,13 @@
 						<ComboBox fx:id="numPlayersBox"
 							onAction="#selectNumPlayers" prefHeight="26.0" prefWidth="174.0"
 							promptText="Select Number of Players" />
-						<MenuItem fx:id="1Player" mnemonicParsing="false"
+						<MenuItem fx:id="onePlayer" mnemonicParsing="false"
 							onAction="#clickSaveGame" text="1 Player" />
-						<MenuItem fx:id="2Players" mnemonicParsing="false"
+						<MenuItem fx:id="twoPlayers" mnemonicParsing="false"
 							onAction="#clickSaveGame" text="2 Player" />
-						<MenuItem fx:id="3Players" mnemonicParsing="false"
+						<MenuItem fx:id="threePlayers" mnemonicParsing="false"
 							onAction="#clickSaveGame" text="3 Player" />
-						<MenuItem fx:id="4Players" mnemonicParsing="false"
+						<MenuItem fx:id="fourPlayers" mnemonicParsing="false"
 							onAction="#clickSaveGame" text="4 Player" />
 					</children>
 				</Pane>
@@ -108,3 +108,4 @@
 			</padding>
 		</ButtonBar>
 	</children>
+</VBox>

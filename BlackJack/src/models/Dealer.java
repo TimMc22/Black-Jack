@@ -1,16 +1,21 @@
 package models;
 
+import java.util.ArrayList;
 
 public class Dealer {
 
 
 	private int chips;
 
+	public Dealer() {
+		
+	}
+	
 	public Dealer(int chips) {
 		this.chips = chips;
 	}
 
-	public Card[] dealHand() {
+	public static Card[] dealHand() {
 		Card[] hand = new Card[2];
 		return hand;
 	}
@@ -36,6 +41,11 @@ public class Dealer {
 		sb.append("Dealer").append("\n");
 		sb.append("Chips Remaining: ").append(chips);
 		return sb.toString();
+	}
+
+	public ArrayList<Card> getHand() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
