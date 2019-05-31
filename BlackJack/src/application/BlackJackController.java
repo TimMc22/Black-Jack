@@ -9,12 +9,16 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class BlackJackController implements Initializable {
+//	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players",
+//			"4 Players");
 
 	@FXML
 	private VBox vBox;
@@ -32,15 +36,6 @@ public class BlackJackController implements Initializable {
 	private Menu numPlayersMenu;
 
 	@FXML
-	private MenuItem newGame, saveGame;
-
-	@FXML
-	private MenuItem loadGame;
-
-	@FXML
-	private MenuItem quit;
-
-	@FXML
 	private MenuItem onePlayer;
 
 	@FXML
@@ -51,6 +46,27 @@ public class BlackJackController implements Initializable {
 
 	@FXML
 	private MenuItem fourPlayers;
+
+	@FXML
+	private MenuItem newGame, saveGame;
+
+	@FXML
+	private MenuItem loadGame;
+
+	@FXML
+	private MenuItem quit;
+
+	@FXML
+	private Pane numPlayersPane;
+
+	@FXML
+	private ComboBox<String> numPlayersBox;
+
+	@FXML
+	private void initialized() {
+		numPlayersBox.setItems(null);
+		numPlayersBox.setValue("Select Number of Players");
+	}
 
 
 	@FXML
