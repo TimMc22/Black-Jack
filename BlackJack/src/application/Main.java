@@ -38,7 +38,7 @@ public class Main extends Application {
 		try {
 			VBox root = (VBox) FXMLLoader.load(getClass().getResource("/application/blackjackSceneBuilder.fxml"));
 //			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root, 400, 400);
+			Scene scene = new Scene(root, 1000, 1000);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
