@@ -6,6 +6,10 @@ public class Dealer extends Card {
 
 	private int chips;
 
+	public Dealer() {
+		
+	}
+	
 	public Dealer(int chips) {
 		this.chips = chips;
 	}
@@ -20,11 +24,11 @@ public class Dealer extends Card {
 		return card;
 	}
 
-	// need to populate
-	public ArrayList<Card> getHand() {
-		return null;
-
-	}
+//	// need to populate
+//	public ArrayList<Card> getHand() {
+//		return null;
+//
+//	}
 
 	public boolean goBust() {
 		boolean isBust = false;
@@ -43,6 +47,11 @@ public class Dealer extends Card {
 		sb.append("Dealer").append("\n");
 		sb.append("Chips Remaining: ").append(chips);
 		return sb.toString();
+	}
+
+	public ArrayList<Card> getHand() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
