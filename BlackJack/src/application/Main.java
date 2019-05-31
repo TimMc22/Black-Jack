@@ -56,7 +56,7 @@ public class Main extends Application {
 			// ask for name
 			String name = "Name";
 
-			Player player = new Player(name);
+			Player player = new Player(name, 100);
 			players[i] = player;
 		}
 		gameStart(players);
@@ -178,10 +178,6 @@ public class Main extends Application {
 		return handValue;
 	}
 
-	public static Card[] dealCards() {
-		Card[] hand = new Card[2];
-		return hand;
-	}
 
 	public static ArrayList<Card> askForHit(ArrayList<Card> hand, Player player) {
 		Card nextCard = Dealer.dealCard();
@@ -255,7 +251,7 @@ public class Main extends Application {
 	}
 
 	public static void saveChips() {
-
+		
 	}
 
 	public static void loadChips() {
