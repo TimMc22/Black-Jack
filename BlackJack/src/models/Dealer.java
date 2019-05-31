@@ -1,17 +1,14 @@
 package models;
 
-import java.util.ArrayList;
 
-public class Dealer extends Card {
+public class Dealer {
+
 
 	private int chips;
-
+	
+	
 	public Dealer() {
 		
-	}
-	
-	public Dealer(int chips) {
-		this.chips = chips;
 	}
 
 	public static Card[] dealHand() {
@@ -24,12 +21,6 @@ public class Dealer extends Card {
 		return card;
 	}
 
-//	// need to populate
-//	public ArrayList<Card> getHand() {
-//		return null;
-//
-//	}
-
 	public boolean goBust() {
 		boolean isBust = false;
 		return isBust;
@@ -38,7 +29,6 @@ public class Dealer extends Card {
 	public boolean getBlackJack() {
 		boolean isBlackJack = false;
 		return isBlackJack;
-
 	}
 
 	@Override
@@ -49,9 +39,6 @@ public class Dealer extends Card {
 		return sb.toString();
 	}
 
-	public ArrayList<Card> getHand() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }

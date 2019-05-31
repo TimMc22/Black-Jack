@@ -11,8 +11,9 @@ public class Player {
 	private ArrayList<Card> hand = new ArrayList<>();
 	private int bet;
 
-	public Player(String name) {
+	public Player(String name, int chips) {
 		this.name = name;
+		this.chips = chips;
 	}
 
 	public String getName() {
