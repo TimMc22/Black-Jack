@@ -28,7 +28,7 @@ public class Main extends Application {
 
 	public static JButton stay = new JButton("Stay");
 	public static JButton hit = new JButton("Hit");
-	private static JPanel drawPanel = new JPanel();
+	public static JPanel drawPanel = new JPanel();
 	public static JButton hitButton = new JButton("Hit");
 	public static JButton stayButton = new JButton("Hit");
 	public static JPanel panel = new JPanel();
