@@ -2,8 +2,8 @@ package application;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import javax.swing.JButton;
-import javax.swing.JPanel;
+//import javax.swing.JButton;
+//import javax.swing.JPanel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,17 +19,10 @@ public class Main extends Application {
 	public static Card[] playerCards = new Card[2];
 	public static Card[] dealerCards = new Card[52];
 	public static Deck deck = new Deck();
-	public static Dealer dealer = new Dealer(0);
+	public static Dealer dealer = new Dealer();
 	public static int numCard;
 	public static int sum;
 	public static int cardVal;
-
-	public static JButton stay = new JButton("Stay");
-	public static JButton hit = new JButton("Hit");
-	public static JPanel drawPanel = new JPanel();
-	public static JButton hitButton = new JButton("Hit");
-	public static JButton stayButton = new JButton("Hit");
-	public static JPanel panel = new JPanel();
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -43,11 +36,6 @@ public class Main extends Application {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		drawPanel.add(hit);
-		drawPanel.add(stay);
-		panel.add(hitButton);
-		panel.add(stayButton);
 
 	}
 
@@ -66,7 +54,7 @@ public class Main extends Application {
 			// ask for name
 			String name = "Name";
 
-			Player player = new Player(name);
+			Player player = new Player(name, 100);
 			players[i] = player;
 		}
 		gameStart(players);
@@ -188,10 +176,6 @@ public class Main extends Application {
 		return handValue;
 	}
 
-	public static Card[] dealCards() {
-		Card[] hand = new Card[2];
-		return hand;
-	}
 
 	public static ArrayList<Card> askForHit(ArrayList<Card> hand, Player player) {
 		Card nextCard = Dealer.dealCard();
@@ -265,7 +249,7 @@ public class Main extends Application {
 	}
 
 	public static void saveChips() {
-
+		
 	}
 
 	public static void loadChips() {

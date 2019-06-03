@@ -24,11 +24,11 @@ public class Dealer extends Card {
 		return card;
 	}
 
-//	// need to populate
-//	public ArrayList<Card> getHand() {
-//		return null;
-//
-//	}
+	// need to populate
+	public ArrayList<Card> getHand() {
+		
+		return null;
+	}
 
 	public boolean goBust() {
 		boolean isBust = false;
@@ -49,9 +49,6 @@ public class Dealer extends Card {
 		return sb.toString();
 	}
 
-	public ArrayList<Card> getHand() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

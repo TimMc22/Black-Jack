@@ -36,29 +36,8 @@
 		<AnchorPane maxHeight="-1.0" maxWidth="-1.0"
 			prefHeight="800.0" prefWidth="1000.0"
 			style="-fx-background-color: #006400;">
-			<children>
-<<<<<<< HEAD
-				<MenuBar fx:id="MenuBar" layoutX="369.0" layoutY="111.0" VBox.vgrow="NEVER">
-=======
-				<Pane fx:id="numPlayersPane" layoutX="412.0" layoutY="31.0"
-					prefHeight="190.0" prefWidth="176.0">
-					<children>
-						<ComboBox fx:id="numPlayersBox"
-							onAction="#selectNumPlayers" prefHeight="26.0" prefWidth="174.0"
-							promptText="Select Number of Players" />
-						<MenuItem fx:id="onePlayer" mnemonicParsing="false"
-							onAction="#clickSaveGame" text="1 Player" />
-						<MenuItem fx:id="twoPlayers" mnemonicParsing="false"
-							onAction="#clickSaveGame" text="2 Player" />
-						<MenuItem fx:id="threePlayers" mnemonicParsing="false"
-							onAction="#clickSaveGame" text="3 Player" />
-						<MenuItem fx:id="fourPlayers" mnemonicParsing="false"
-							onAction="#clickSaveGame" text="4 Player" />
-					</children>
-				</Pane>
 				<MenuBar fx:id="MenuBar" layoutX="379.0" layoutY="43.0"
 					VBox.vgrow="NEVER">
->>>>>>> 1dfde45dbda9b178e7bda408f1120342043f350b
 					<menus>
 						<Menu fx:id="menu" mnemonicParsing="false"
 							onAction="#clickMenu" text="Selet Number of Players">
@@ -75,7 +54,6 @@
 						</Menu>
 					</menus>
 				</MenuBar>
-			</children>
 		</AnchorPane>
 		<ButtonBar buttonMinWidth="0.0" prefHeight="200.0"
 			style="-fx-background-color: #006400;">
