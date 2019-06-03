@@ -3,7 +3,7 @@ package models;
 
 public class Dealer {
 
-
+	private Card[] hand = new Card[2];
 	private int chips;
 	
 	
@@ -31,6 +31,14 @@ public class Dealer {
 		return isBlackJack;
 	}
 
+	public Card[] getHand() {
+		return hand;
+	}
+
+	public void setHand(Card[] hand) {
+		this.hand = hand;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -38,7 +46,6 @@ public class Dealer {
 		sb.append("Chips Remaining: ").append(chips);
 		return sb.toString();
 	}
-
 
 
 }

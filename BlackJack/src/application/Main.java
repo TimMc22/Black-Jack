@@ -21,7 +21,7 @@ public class Main extends Application {
 	public static Card[] playerCards = new Card[2];
 	public static Card[] dealerCards = new Card[52];
 	public static Deck deck = new Deck();
-	public static Dealer dealer = new Dealer(0);
+	public static Dealer dealer = new Dealer();
 	public static int numCard;
 	public static int sum;
 	public static int cardVal;
@@ -78,7 +78,7 @@ public class Main extends Application {
 		for (int i = 0; i < players.length; i++) {
 			Dealer.dealHand();
 			boolean canSplit = checkForSplit(players[i]);
-
+			
 			// tell gui to ask for split here
 			if (canSplit) {
 				splitHand(players[i].getHand(), players[i]);
@@ -87,6 +87,7 @@ public class Main extends Application {
 			}
 
 		}
+		
 		int stayCount = 0;
 		boolean[] stay = new boolean[players.length];
 		for (int i = 0; i < players.length; i++) {
