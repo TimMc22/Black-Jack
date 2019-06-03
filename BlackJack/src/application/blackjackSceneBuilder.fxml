@@ -6,70 +6,57 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vBox" prefHeight="800.0" prefWidth="1000.0"
-	style="-fx-background-color: #00640;"
-	xmlns="http://javafx.com/javafx/11.0.1"
-	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="application.BlackJackController">
+<VBox fx:id="vBox" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #00640;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BlackJackController">
 	<children>
 		<MenuBar fx:id="MenuBar" VBox.vgrow="NEVER">
 			<menus>
-				<Menu fx:id="menu" mnemonicParsing="false"
-					onAction="#clickMenu" text="Options">
+				<Menu fx:id="menu" mnemonicParsing="false" onAction="#clickMenu" text="Options">
 					<items>
-						<MenuItem fx:id="newGame" mnemonicParsing="false"
-							onAction="#clickNewGame" text="New Game" />
-						<MenuItem fx:id="saveGame" mnemonicParsing="false"
-							onAction="#clickSaveGame" text="Save Game" />
-						<MenuItem fx:id="loadGame" mnemonicParsing="false"
-							onAction="#clickLoadGame" text="Load Chips" />
-						<MenuItem fx:id="quit" mnemonicParsing="false"
-							onAction="#clickQuit" text="Quit" />
+						<MenuItem fx:id="newGame" mnemonicParsing="false" onAction="#clickNewGame" text="New Game" />
+						<MenuItem fx:id="saveGame" mnemonicParsing="false" onAction="#clickSaveGame" text="Save Game" />
+						<MenuItem fx:id="loadGame" mnemonicParsing="false" onAction="#clickLoadGame" text="Load Chips" />
+						<MenuItem fx:id="quit" mnemonicParsing="false" onAction="#clickQuit" text="Quit" />
 					</items>
 				</Menu>
 			</menus>
 		</MenuBar>
-		<AnchorPane maxHeight="-1.0" maxWidth="-1.0"
-			prefHeight="800.0" prefWidth="1000.0"
-			style="-fx-background-color: #006400;">
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #006400;">
 			<children>
-				<MenuBar fx:id="MenuBar" layoutX="379.0" layoutY="43.0"
-					VBox.vgrow="NEVER">
+            <ImageView fitHeight="658.0" fitWidth="1000.0" opacity="0.55" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../PNG/Table.jpg" />
+               </image>
+            </ImageView>
+				<MenuBar fx:id="MenuBar" layoutX="379.0" layoutY="43.0" VBox.vgrow="NEVER">
 					<menus>
-						<Menu fx:id="menu" mnemonicParsing="false"
-							onAction="#clickMenu" text="Selet Number of Players">
+						<Menu fx:id="menu" mnemonicParsing="false" onAction="#clickMenu" text="Selet Number of Players">
 							<items>
-								<MenuItem fx:id="onePlayer" mnemonicParsing="false"
-									onAction="#clickOnePlayer" text="1 Player" />
-								<MenuItem fx:id="twoPlayers" mnemonicParsing="false"
-									onAction="#clickTwoPlayes" text="2 Players" />
-								<MenuItem fx:id="threePlayers" mnemonicParsing="false"
-									onAction="#clickThreePlayers" text="3 Players" />
-								<MenuItem fx:id="fourPlayers" mnemonicParsing="false"
-									onAction="#clickFourPlayers" text="4 Players" />
+								<MenuItem fx:id="onePlayer" mnemonicParsing="false" onAction="#clickOnePlayer" text="1 Player" />
+								<MenuItem fx:id="twoPlayers" mnemonicParsing="false" onAction="#clickTwoPlayes" text="2 Players" />
+								<MenuItem fx:id="threePlayers" mnemonicParsing="false" onAction="#clickThreePlayers" text="3 Players" />
+								<MenuItem fx:id="fourPlayers" mnemonicParsing="false" onAction="#clickFourPlayers" text="4 Players" />
 							</items>
 						</Menu>
 					</menus>
 				</MenuBar>
+            <TextField layoutX="367.0" layoutY="14.0" prefHeight="26.0" prefWidth="184.0" promptText="Name/Game Name" />
 			</children>
 		</AnchorPane>
-		<ButtonBar buttonMinWidth="0.0" prefHeight="200.0"
-			style="-fx-background-color: #006400;">
+		<ButtonBar buttonMinWidth="0.0" prefHeight="200.0" style="-fx-background-color: #006400;">
 			<buttons>
-				<Button fx:id="stayButton" alignment="CENTER"
-					mnemonicParsing="false" onAction="#stayClick"
-					style="-fx-background-color: #000000;" text="Stay" textFill="WHITE">
+				<Button fx:id="stayButton" alignment="CENTER" mnemonicParsing="false" onAction="#stayClick" style="-fx-background-color: #000000;" text="Stay" textFill="WHITE">
 					<font>
 						<Font name="Berlin Sans FB" size="18.0" />
 					</font>
 				</Button>
-				<Button fx:id="hitButton" alignment="CENTER"
-					mnemonicParsing="false" onAction="#clickHit" snapToPixel="false"
-					style="-fx-background-color: #000000;" text="Hit" textFill="WHITE">
+				<Button fx:id="hitButton" alignment="CENTER" mnemonicParsing="false" onAction="#clickHit" snapToPixel="false" style="-fx-background-color: #000000;" text="Hit" textFill="WHITE">
 					<font>
 						<Font name="Berlin Sans FB" size="18.0" />
 					</font>
@@ -82,22 +69,14 @@
 				<Insets />
 			</opaqueInsets>
 		</ButtonBar>
-		<ButtonBar buttonMinWidth="0.0" layoutX="10.0"
-			layoutY="723.0" prefHeight="200.0"
-			style="-fx-background-color: #006400;">
+		<ButtonBar buttonMinWidth="0.0" layoutX="10.0" layoutY="723.0" prefHeight="200.0" style="-fx-background-color: #006400;">
 			<buttons>
-				<Button fx:id="doubleDownButton" alignment="CENTER"
-					mnemonicParsing="false" onAction="#clickDoubleDown"
-					style="-fx-background-color: #000000;" text="Double Down"
-					textFill="WHITE">
+				<Button fx:id="doubleDownButton" alignment="CENTER" mnemonicParsing="false" onAction="#clickDoubleDown" style="-fx-background-color: #000000;" text="Double Down" textFill="WHITE">
 					<font>
 						<Font name="Berlin Sans FB" size="18.0" />
 					</font>
 				</Button>
-				<Button fx:id="splitButton" alignment="CENTER"
-					layoutX="100.0" mnemonicParsing="false" onAction="#clickSplit"
-					style="-fx-background-color: #000000;" text="Split"
-					textAlignment="CENTER" textFill="WHITE">
+				<Button fx:id="splitButton" alignment="CENTER" layoutX="100.0" mnemonicParsing="false" onAction="#clickSplit" style="-fx-background-color: #000000;" text="Split" textAlignment="CENTER" textFill="WHITE">
 					<font>
 						<Font name="Berlin Sans FB" size="18.0" />
 					</font>
