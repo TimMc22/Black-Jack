@@ -3,9 +3,10 @@ package application;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 
+//import javax.swing.JButton;
+//import javax.swing.JPanel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -26,19 +27,12 @@ public class Main extends Application {
 	public static int sum;
 	public static int cardVal;
 
-	public static JButton stay = new JButton("Stay");
-	public static JButton hit = new JButton("Hit");
-	private static JPanel drawPanel = new JPanel();
-	public static JButton hitButton = new JButton("Hit");
-	public static JButton stayButton = new JButton("Hit");
-	public static JPanel panel = new JPanel();
-
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			VBox root = (VBox) FXMLLoader.load(getClass().getResource("/application/blackjackSceneBuilder.fxml"));
 //			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root, 400, 400);
+			Scene scene = new Scene(root, 1000, 1000);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
@@ -46,17 +40,13 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 
-		drawPanel.add(hit);
-		drawPanel.add(stay);
-		panel.add(hitButton);
-		panel.add(stayButton);
-
 	}
 
 	public static void main(String[] args) {
 		launch(args);
 	}
 
+	
 	public static void makePlayers() {
 		// need to populate the dropdown menu with 1,2,3,4
 		// ask players for name
@@ -70,8 +60,7 @@ public class Main extends Application {
 			}
 
 			//ask for num chips
-			int numChips = 100;
-			Player player = new Player(name, numChips);
+			Player player = new Player(name, 100);
 			players[i] = player;
 		}
 		gameStart(players);
@@ -93,7 +82,7 @@ public class Main extends Application {
 		for (int i = 0; i < players.length; i++) {
 			Dealer.dealHand();
 			boolean canSplit = checkForSplit(players[i]);
-
+			
 			// tell gui to ask for split here
 			if (canSplit) {
 				splitHand(players[i].getHand(), players[i]);
@@ -102,6 +91,7 @@ public class Main extends Application {
 			}
 
 		}
+		
 		int stayCount = 0;
 		boolean[] stay = new boolean[players.length];
 		for (int i = 0; i < players.length; i++) {
@@ -193,10 +183,6 @@ public class Main extends Application {
 		return handValue;
 	}
 
-	public static Card[] dealCards() {
-		Card[] hand = new Card[2];
-		return hand;
-	}
 
 	public static ArrayList<Card> askForHit(ArrayList<Card> hand, Player player) {
 		Card nextCard = Dealer.dealCard();
@@ -243,8 +229,7 @@ public class Main extends Application {
 		getBlackjack(player);
 	}
 
-	
-	//needs fixed
+	// needs fixed
 	public static boolean bust(Player player) {
 		boolean isBust = false;
 		if (playerCards.length > 21) {
@@ -271,7 +256,7 @@ public class Main extends Application {
 	}
 
 	public static void saveChips() {
-
+		
 	}
 
 	public static void loadChips() {

@@ -2,11 +2,18 @@ package models;
 
 import java.util.ArrayList;
 
-public class Dealer {
+public class Dealer extends Card {
+
+	private Card[] hand = new Card[2];
 
 	private int chips;
 
 	public Dealer() {
+
+	}
+
+	public Dealer(int chips) {
+		this.chips = chips;
 	}
 
 	public static Card[] dealHand() {
@@ -19,18 +26,25 @@ public class Dealer {
 		return card;
 	}
 
-	//need to populate
+	// need to populate
 	public ArrayList<Card> getHand() {
-		
+
+		return null;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Dealer").append("\n");
-		sb.append("Chips Remaining: ").append(chips);
-		return sb.toString();
+	public void setHand(Card[] hand) {
+		this.hand = hand;
 	}
 
+	public boolean goBust() {
+		boolean isBust = false;
+		return isBust;
+	}
+
+	public boolean getBlackJack() {
+		boolean isBlackJack = false;
+		return isBlackJack;
+
+	}
 
 }
