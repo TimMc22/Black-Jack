@@ -18,6 +18,8 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import lib.ConsoleIO;
@@ -67,6 +69,82 @@ public class BlackJackController implements Initializable{
     
     @FXML
     private TextField text;
+    
+    @FXML
+    private ImageView dealerCardFour;
+
+    @FXML
+    private ImageView dealerCardSix;
+
+    @FXML
+    private ImageView dealerCardThree;
+
+    @FXML
+    private ImageView dealerCardTwo;
+
+    @FXML
+    private ImageView dealerCardOne;
+
+    @FXML
+    private ImageView dealerCardFive;
+
+    @FXML
+    private ImageView playerCardOne;
+
+    @FXML
+    private ImageView playerCardTwo;
+
+    @FXML
+    private ImageView playerCardThree;
+
+    @FXML
+    private ImageView playerCardFour;
+
+    @FXML
+    private ImageView playerCardFive;
+
+    @FXML
+    private ImageView playerCardSix;
+
+    @FXML
+    private ImageView ones;
+
+    @FXML
+    private ImageView fives;
+
+    @FXML
+    private ImageView tens;
+
+    @FXML
+    private ImageView fifties;
+
+    @FXML
+    private ImageView hundreds;
+
+    @FXML
+    void betFifty(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betFive(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betHundo(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betOne(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betTen(MouseEvent event) {
+
+    }
     
     
     @FXML
@@ -135,7 +213,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void stayClick(ActionEvent event) {
-
+    	
     }
     
     @FXML

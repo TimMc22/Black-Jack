@@ -27,7 +27,7 @@
 		</MenuBar>
 		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="658.0" prefWidth="1000.0" style="-fx-background-color: #006400;">
 			<children>
-            <ImageView fitHeight="658.0" fitWidth="1000.0" opacity="0.55" pickOnBounds="true">
+            <ImageView fitHeight="658.0" fitWidth="1000.0" layoutX="10.0" opacity="0.55" pickOnBounds="true">
                <image>
                   <Image url="@../../../PNG/Table.jpg" />
                </image>
@@ -65,6 +65,96 @@
 						<Font name="Berlin Sans FB" size="18.0" />
 					</font>
 				</Button>
+            <ImageView fx:id="dealerCardFour" fitHeight="125.0" fitWidth="82.0" layoutX="469.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/2C.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dealerCardSix" fitHeight="125.0" fitWidth="82.0" layoutX="678.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/2D.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dealerCardThree" fitHeight="125.0" fitWidth="82.0" layoutX="367.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/2H.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dealerCardTwo" fitHeight="125.0" fitWidth="82.0" layoutX="266.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/2S.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dealerCardOne" fitHeight="125.0" fitWidth="82.0" layoutX="165.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/3C.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dealerCardFive" fitHeight="125.0" fitWidth="82.0" layoutX="572.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/3D.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardOne" fitHeight="125.0" fitWidth="82.0" layoutX="165.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/3H.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardTwo" fitHeight="125.0" fitWidth="82.0" layoutX="266.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/3S.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardThree" fitHeight="125.0" fitWidth="82.0" layoutX="367.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/4C.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardFour" fitHeight="125.0" fitWidth="82.0" layoutX="469.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/4D.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardFive" fitHeight="125.0" fitWidth="82.0" layoutX="572.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/4H.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardSix" fitHeight="125.0" fitWidth="82.0" layoutX="678.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/4S.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="125.0" fitWidth="82.0" layoutX="56.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/purple_back.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ones" fitHeight="125.0" fitWidth="117.0" layoutX="14.0" layoutY="531.0" onMouseClicked="#betOne" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../chips/1whChip.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="fives" fitHeight="125.0" fitWidth="117.0" layoutX="147.0" layoutY="531.0" onMouseClicked="#betFive" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../chips/5rdChip.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="tens" fitHeight="117.0" fitWidth="117.0" layoutX="279.0" layoutY="531.0" onMouseClicked="#betTen" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../chips/10pkChip.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="fifties" fitHeight="117.0" fitWidth="117.0" layoutX="427.0" layoutY="531.0" onMouseClicked="#betFifty" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../chips/50gnChip.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="hundreds" fitHeight="117.0" fitWidth="117.0" layoutX="554.0" layoutY="531.0" onMouseClicked="#betHundo" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../chips/100blChip.png" />
+               </image>
+            </ImageView>
 			</children>
 		</AnchorPane>
 	</children>
