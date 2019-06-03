@@ -3,8 +3,6 @@ package application;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import javax.swing.JOptionPane;
-
 //import javax.swing.JButton;
 //import javax.swing.JPanel;
 import javafx.application.Application;
@@ -216,7 +214,6 @@ public class Main extends Application {
 
 	public static int makeBet() {
 		int bet = 0;
-
 		return bet;
 	}
 
@@ -255,11 +252,4 @@ public class Main extends Application {
 		player.setChips(chipsWon + player.getChips());
 	}
 
-	public static void saveChips() {
-		
-	}
-
-	public static void loadChips() {
-
-	}
 }
