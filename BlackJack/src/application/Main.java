@@ -62,13 +62,16 @@ public class Main extends Application {
 		// ask players for name
 		// populate players into array accordingly
 		int numPlayers = 3;
-		// info from dropdown menu
 		for (int i = 0; i < numPlayers; i++) {
-
 			// ask for name
 			String name = "Name";
+			if(name == "") {
+				name = "Player " + i;
+			}
 
-			Player player = new Player(name);
+			//ask for num chips
+			int numChips = 100;
+			Player player = new Player(name, numChips);
 			players[i] = player;
 		}
 		gameStart(players);
