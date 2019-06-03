@@ -15,14 +15,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import lib.ConsoleIO;
-import models.Player;
-	
-	
 
+	
+	
 
 public class BlackJackController implements Initializable{
 	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players", "4 Players");
@@ -79,6 +76,7 @@ public class BlackJackController implements Initializable{
     @FXML
     private Button hitButton;
 
+
     @FXML
     private Button doubleDownButton;
 
@@ -88,13 +86,14 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void clickDoubleDown(ActionEvent event) {
-
+    	
     }
 
-    @FXML
-    void clickHit(ActionEvent event) {
-    
-    }
+	@FXML
+	void clickHit(ActionEvent event) {
+		System.out.println("Hit clicket");
+	}
+
 
     @FXML
     void clickLoadGame(ActionEvent event) {
@@ -132,11 +131,29 @@ public class BlackJackController implements Initializable{
     }
 
     @FXML
-    void stayClick(ActionEvent event) {
+    void clickOnePlayer(ActionEvent event) {
 
     }
     
-  
+    @FXML
+    void clickTwoPlayes(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void clickThreePlayers(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void clickFourPlayers(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void stayClick(ActionEvent event) {
+
+    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

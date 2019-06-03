@@ -35,6 +35,11 @@
                </image>
             </ImageView>
 				<MenuBar fx:id="MenuBar" layoutX="379.0" layoutY="43.0" VBox.vgrow="NEVER">
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0"
+			prefHeight="800.0" prefWidth="1000.0"
+			style="-fx-background-color: #006400;">
+				<MenuBar fx:id="MenuBar" layoutX="379.0" layoutY="43.0"
+					VBox.vgrow="NEVER">
 					<menus>
 						<Menu fx:id="menu" mnemonicParsing="false" onAction="#clickMenu" text="Selet Number of Players">
 							<items>
