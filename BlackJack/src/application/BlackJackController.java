@@ -4,14 +4,13 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javax.swing.JOptionPane;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -21,9 +20,30 @@ import javafx.scene.layout.VBox;
 	
 	
 
-public class BlackJackController implements Initializable{
-	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players", "4 Players");
+public class BlackJackController implements Initializable {
 
+	public int numOfPlayers() {
+
+		int numberPlayer = 0;
+		String playerName = "";
+
+		while (numberPlayer <= 0) {
+			try {
+				numberPlayer = Integer.parseInt(JOptionPane.showInputDialog("Please enter the number of player: "));
+			} catch (NumberFormatException ex) {
+				numberPlayer = 0;
+			}
+
+			for (int i = 0; i < numberPlayer; i++) {
+				playerName = JOptionPane.showInputDialog("Please enter the player name: ");
+				if (playerName == null || playerName.isEmpty()) {
+					playerName = "Player " + i;
+				}
+			}
+		}
+		return numberPlayer;
+	}
+	
     @FXML
     private VBox vBox;
 
@@ -47,18 +67,7 @@ public class BlackJackController implements Initializable{
     
     @FXML
     private MenuItem onePlayer;
-    
-    @FXML
-    private MenuItem twoPlayers;
-    
-    @FXML
-    private MenuItem threePlayers;
-    
-    @FXML
-    private MenuItem fourPlayers;
 
-    @FXML
-    private ComboBox<String> numPlayersBox;
     
 //    @FXML
 //    private TextField text;
@@ -66,8 +75,7 @@ public class BlackJackController implements Initializable{
     
     @FXML
     private void initialized() {
-    	numPlayersBox.setItems(options);
-    	numPlayersBox.setValue("Select Number of Players");
+    	
     }
 
     @FXML
@@ -127,7 +135,6 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void selectNumPlayers(ActionEvent event) {
-
     }
 
     @FXML
@@ -136,24 +143,18 @@ public class BlackJackController implements Initializable{
     }
     
     @FXML
-    void clickTwoPlayes(ActionEvent event) {
-
-    }
-    
-    @FXML
-    void clickThreePlayers(ActionEvent event) {
-
-    }
-    
-    @FXML
-    void clickFourPlayers(ActionEvent event) {
-
-    }
-    
-    @FXML
     void stayClick(ActionEvent event) {
 
     }
+    
+    @FXML
+    void clicPlayer(ActionEvent event) {
+    	int players = numOfPlayers();
+
+    }
+    
+    
+    
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
