@@ -36,7 +36,7 @@ public class BlackJackController implements Initializable {
 
 			for (int i = 0; i < numberPlayer; i++) {
 				playerName = JOptionPane.showInputDialog("Please enter the player name: ");
-				if (playerName == null || playerName.isEmpty()) {
+				if (playerName.isEmpty()) {
 					playerName = "Player " + i;
 				}
 			}
