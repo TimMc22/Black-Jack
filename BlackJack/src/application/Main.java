@@ -80,7 +80,7 @@ public class Main extends Application {
 		for (int i = 0; i < players.length; i++) {
 			Dealer.dealHand();
 			boolean canSplit = checkForSplit(players[i]);
-
+			
 			// tell gui to ask for split here
 			if (canSplit) {
 				splitHand(players[i].getHand(), players[i]);
@@ -89,6 +89,7 @@ public class Main extends Application {
 			}
 
 		}
+		
 		int stayCount = 0;
 		boolean[] stay = new boolean[players.length];
 		for (int i = 0; i < players.length; i++) {

@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 public class Dealer extends Card {
 
+	private Card[] hand = new Card[2];
+
 	private int chips;
 
 	public Dealer() {
-		
+
 	}
-	
+
 	public Dealer(int chips) {
 		this.chips = chips;
 	}
@@ -26,8 +28,12 @@ public class Dealer extends Card {
 
 	// need to populate
 	public ArrayList<Card> getHand() {
-		
+
 		return null;
+	}
+
+	public void setHand(Card[] hand) {
+		this.hand = hand;
 	}
 
 	public boolean goBust() {
@@ -40,15 +46,5 @@ public class Dealer extends Card {
 		return isBlackJack;
 
 	}
-
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Dealer").append("\n");
-		sb.append("Chips Remaining: ").append(chips);
-		return sb.toString();
-	}
-
-	
 
 }

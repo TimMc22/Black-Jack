@@ -55,7 +55,7 @@ public class Player {
 	}
 
 	public static void placeBet(int bet) {
-
+		
 	}
 
 	public Card hit() {

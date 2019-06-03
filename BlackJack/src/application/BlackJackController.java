@@ -67,10 +67,6 @@ public class BlackJackController implements Initializable {
     
     @FXML
     private MenuItem onePlayer;
-
-    
-//    @FXML
-//    private TextField text;
     
     
     @FXML
@@ -135,11 +131,7 @@ public class BlackJackController implements Initializable {
 
     @FXML
     void selectNumPlayers(ActionEvent event) {
-    }
-
-    @FXML
-    void clickOnePlayer(ActionEvent event) {
-
+    	
     }
     
     @FXML
@@ -152,8 +144,6 @@ public class BlackJackController implements Initializable {
     	int players = numOfPlayers();
 
     }
-    
-    
     
 
 	@Override
