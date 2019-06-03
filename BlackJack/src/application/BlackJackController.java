@@ -140,7 +140,7 @@ public class BlackJackController implements Initializable {
     }
     
     @FXML
-    void clicPlayer(ActionEvent event) {
+    void clickPlayer(ActionEvent event) {
     	int players = numOfPlayers();
 
     }
