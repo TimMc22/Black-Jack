@@ -44,9 +44,11 @@
 						<Menu fx:id="menu" mnemonicParsing="false" onAction="#clickMenu" text="Selet Number of Players">
 							<items>
 								<MenuItem fx:id="onePlayer" mnemonicParsing="false" onAction="#clickOnePlayer" text="1 Player" />
-								<MenuItem fx:id="twoPlayers" mnemonicParsing="false" onAction="#clickTwoPlayes" text="2 Players" />
-								<MenuItem fx:id="threePlayers" mnemonicParsing="false" onAction="#clickThreePlayers" text="3 Players" />
-								<MenuItem fx:id="fourPlayers" mnemonicParsing="false" onAction="#clickFourPlayers" text="4 Players" />
+				<MenuBar fx:id="MenuBar" layoutX="379.0" layoutY="43.0" VBox.vgrow="NEVER">
+					<menus>
+						<Menu fx:id="menu" mnemonicParsing="false" onAction="#clickMenu" text="Selet Number of Players">
+							<items>
+								<MenuItem fx:id="onePlayer" mnemonicParsing="false" onAction="#clicPlayer" text="Enter number of Players" />
 							</items>
 						</Menu>
 					</menus>

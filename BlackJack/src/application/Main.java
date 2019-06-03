@@ -2,6 +2,9 @@ package application;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import javax.swing.JOptionPane;
+
 //import javax.swing.JButton;
 //import javax.swing.JPanel;
 import javafx.application.Application;
@@ -43,6 +46,7 @@ public class Main extends Application {
 		launch(args);
 	}
 
+	
 	public static void makePlayers() {
 		// need to populate the dropdown menu with 1,2,3,4
 		// ask players for name
