@@ -4,6 +4,8 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,7 +28,7 @@ import models.Player;
 
 public class BlackJackController implements Initializable{
 	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players", "4 Players");
-
+	public Player[] players;
     @FXML
     private VBox vBox;
 
@@ -108,7 +110,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void clickNewGame(ActionEvent event) {
-
+    	
     }
 
     @FXML
@@ -136,8 +138,48 @@ public class BlackJackController implements Initializable{
 
     }
     
-  
-
+    @FXML
+    void clickOnePlayer(ActionEvent event) {
+    	int i = 1;
+    	String playerName = JOptionPane.showInputDialog("Please enter your name: ");
+    	if(playerName == null || playerName.isEmpty()) {
+    		playerName = "Player " + i;
+    	}
+    	players[0] = new Player(playerName, 100);
+    }
+    
+    @FXML
+    void clickTwoPlayers(ActionEvent event) {
+    	for(int i = 0; i < 2; i++) {
+    		String playerName = JOptionPane.showInputDialog("Please enter your name: ");
+    		if(playerName == null || playerName.isEmpty()) {
+        		playerName = "Player " + i;
+        	}
+    		players[i] = new Player(playerName, 100);
+    	}
+    }
+    
+    @FXML
+    void clickThreePlayers(ActionEvent event) {
+    	for(int i = 0; i < 3; i++) {
+    		String playerName = JOptionPane.showInputDialog("Please enter your name: ");
+    		if(playerName == null || playerName.isEmpty()) {
+        		playerName = "Player " + i;
+        	}
+    		players[i] = new Player(playerName, 100);
+    	}
+    }
+    
+    @FXML
+    void clickFourPlayers(ActionEvent event) {
+    	for(int i = 0; i < 4; i++) {
+    		String playerName = JOptionPane.showInputDialog("Please enter your name: ");
+    		if(playerName == null || playerName.isEmpty()) {
+        		playerName = "Player " + i;
+        	}
+    		players[i] = new Player(playerName, 100);
+    	}
+    }
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		quit.setOnAction(new EventHandler<ActionEvent>() {
