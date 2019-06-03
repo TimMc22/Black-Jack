@@ -63,8 +63,8 @@ public class BlackJackController implements Initializable{
     @FXML
     private ComboBox<String> numPlayersBox;
     
-//    @FXML
-//    private TextField text;
+    @FXML
+    private TextField text;
     
     
     @FXML
@@ -98,7 +98,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void clickLoadGame(ActionEvent event) {
-//    	Main.players = (Player[]) ConsoleIO.DeSerialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", Main.players);
+    	Main.players = (Player[]) ConsoleIO.DeSerialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", Main.players);
     }
 
     @FXML
@@ -118,7 +118,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void clickSaveGame(ActionEvent event) {
-//    	ConsoleIO.Serialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", Main.players);
+    	ConsoleIO.Serialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", Main.players);
     }
 
     @FXML
