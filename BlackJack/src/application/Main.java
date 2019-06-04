@@ -3,6 +3,8 @@ package application;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.swing.JOptionPane;
+
 //import javax.swing.JButton;
 //import javax.swing.JPanel;
 import javafx.application.Application;
@@ -34,6 +36,7 @@ public class Main extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			int players = numOfPlayers();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -44,6 +47,27 @@ public class Main extends Application {
 		launch(args);
 	}
 
+	public int numOfPlayers() {
+
+		int numberPlayer = 0;
+		String playerName = "";
+
+		while (numberPlayer <= 0) {
+			try {
+				numberPlayer = Integer.parseInt(JOptionPane.showInputDialog("Please enter the number of player: "));
+			} catch (NumberFormatException ex) {
+				numberPlayer = 0;
+			}
+
+			for (int i = 0; i < numberPlayer; i++) {
+				playerName = JOptionPane.showInputDialog("Please enter the player name: ");
+				if (playerName.isEmpty()) {
+					playerName = "Player " + i;
+				}
+			}
+		}
+		return numberPlayer;
+	} 
 	
 	public static void makePlayers() {
 		// need to populate the dropdown menu with 1,2,3,4

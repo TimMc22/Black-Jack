@@ -4,8 +4,6 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.swing.JOptionPane;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -21,28 +19,6 @@ import javafx.scene.layout.VBox;
 	
 
 public class BlackJackController implements Initializable {
-
-	public int numOfPlayers() {
-
-		int numberPlayer = 0;
-		String playerName = "";
-
-		while (numberPlayer <= 0) {
-			try {
-				numberPlayer = Integer.parseInt(JOptionPane.showInputDialog("Please enter the number of player: "));
-			} catch (NumberFormatException ex) {
-				numberPlayer = 0;
-			}
-
-			for (int i = 0; i < numberPlayer; i++) {
-				playerName = JOptionPane.showInputDialog("Please enter the player name: ");
-				if (playerName.isEmpty()) {
-					playerName = "Player " + i;
-				}
-			}
-		}
-		return numberPlayer;
-	}
 	
     @FXML
     private VBox vBox;
@@ -54,7 +30,7 @@ public class BlackJackController implements Initializable {
     private Menu menu;
 
     @FXML
-     private MenuItem newGame, saveGame;
+    private MenuItem newGame, saveGame;
 
     @FXML
     private MenuItem loadGame;
@@ -63,17 +39,10 @@ public class BlackJackController implements Initializable {
     private MenuItem quit;
 
     @FXML
-    private Pane numPlayersPane;
-    
-    @FXML
-    private MenuItem onePlayer;
-
-    @FXML
     private Button stayButton;
 
     @FXML
     private Button hitButton;
-
 
     @FXML
     private Button doubleDownButton;
@@ -89,7 +58,6 @@ public class BlackJackController implements Initializable {
 
 	@FXML
 	void clickHit(ActionEvent event) {
-		System.out.println("Hit clicket");
 	}
 
 
@@ -122,20 +90,9 @@ public class BlackJackController implements Initializable {
     void clickSplit(ActionEvent event) {
 
     }
-
-    @FXML
-    void selectNumPlayers(ActionEvent event) {
-    	
-    }
     
     @FXML
     void stayClick(ActionEvent event) {
-
-    }
-    
-    @FXML
-    void clicPlayer(ActionEvent event) {
-    	int players = numOfPlayers();
 
     }
     

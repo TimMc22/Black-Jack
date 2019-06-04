@@ -24,17 +24,7 @@
 				</Menu>
 			</menus>
 		</MenuBar>
-		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #006400;">
-				<MenuBar fx:id="MenuBar" layoutX="379.0" layoutY="43.0" VBox.vgrow="NEVER">
-					<menus>
-						<Menu fx:id="menu" mnemonicParsing="false" onAction="#clickMenu" text="Selet Number of Players">
-							<items>
-								<MenuItem fx:id="onePlayer" mnemonicParsing="false" onAction="#clicPlayer" text="Enter number of Players" />
-							</items>
-						</Menu>
-					</menus>
-				</MenuBar>
-		</AnchorPane>
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #006400;" />
 		<ButtonBar buttonMinWidth="0.0" prefHeight="200.0" style="-fx-background-color: #006400;">
 			<buttons>
 				<Button fx:id="stayButton" alignment="CENTER" mnemonicParsing="false" onAction="#stayClick" style="-fx-background-color: #000000;" text="Stay" textFill="WHITE">
