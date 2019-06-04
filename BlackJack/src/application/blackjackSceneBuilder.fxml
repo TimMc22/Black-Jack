@@ -45,9 +45,6 @@
 						<Image url="@../../../PNG/Table.jpg" />
 					</image>
 				</ImageView>
-				<MenuBar fx:id="MenuBar" layoutX="379.0" layoutY="43.0"
-					VBox.vgrow="NEVER">
-				</MenuBar>
 			</children>
 		</AnchorPane>
 		<ButtonBar buttonMinWidth="0.0" prefHeight="200.0"
