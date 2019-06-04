@@ -47,6 +47,8 @@
 				</ImageView>
 			</children>
 		</AnchorPane>
+		</ButtonBar>
+		</AnchorPane>
 		<ButtonBar buttonMinWidth="0.0" prefHeight="200.0"
 			style="-fx-background-color: #006400;">
 			<buttons>
