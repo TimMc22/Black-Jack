@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.MenuItem; 
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -67,12 +67,6 @@ public class BlackJackController implements Initializable {
     
     @FXML
     private MenuItem onePlayer;
-    
-    
-    @FXML
-    private void initialized() {
-    	
-    }
 
     @FXML
     private Button stayButton;
@@ -101,7 +95,7 @@ public class BlackJackController implements Initializable {
 
     @FXML
     void clickLoadGame(ActionEvent event) {
-//    	Main.players = (Player[]) ConsoleIO.DeSerialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", Main.players);
+
     }
 
     @FXML
@@ -121,7 +115,7 @@ public class BlackJackController implements Initializable {
 
     @FXML
     void clickSaveGame(ActionEvent event) {
-//    	ConsoleIO.Serialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", Main.players);
+
     }
 
     @FXML
