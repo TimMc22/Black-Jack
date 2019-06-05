@@ -142,8 +142,9 @@ public class Main extends Application {
 
 	public static int getPlayerCards() {
 		numCard = 0;
-		while (playerCards[numCard] != null)
+		while (playerCards[numCard] != null) {
 			numCard++;
+		}
 		return numCard;
 
 	}

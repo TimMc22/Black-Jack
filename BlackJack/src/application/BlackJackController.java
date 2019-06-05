@@ -127,7 +127,8 @@ public class BlackJackController implements Initializable{
     void betFifty(MouseEvent event) {
     	if(players.getChips() > 49) {
     		thePot += 50;
-    		players.setChips(players.getChips()-50);
+    		int test = players.getChips();
+    		players.setChips(test-50);
     	}else {
     		System.out.println("not enough");
     	}
@@ -245,7 +246,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void selectNumPlayers(ActionEvent event) {
-
+    	
     }
 
     @FXML

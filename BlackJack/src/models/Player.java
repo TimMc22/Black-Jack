@@ -26,12 +26,7 @@ public class Player implements Serializable{
 	}
 
 	public int getChips() {
-		if (chips <= 0) {
-			goBust();
-			return 0;
-		} else {
-			return chips;
-		}
+		return chips;
 	}
 
 	public void setChips(int chips) {
@@ -46,14 +41,6 @@ public class Player implements Serializable{
 		this.hand = hand;
 	}
 
-	public boolean goBust() {
-		if (getChips() <= 0) {
-			return true;
-		} else {
-			return false;
-		}
-
-	}
 
 	public static void placeBet(int bet) {
 		
