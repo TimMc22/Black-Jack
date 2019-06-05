@@ -30,7 +30,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			VBox root = (VBox) FXMLLoader.load(getClass().getResource("/application/blackjackSceneBuilder.fxml"));
+			VBox root = FXMLLoader.<VBox>load(getClass().getResource("/application/blackjackSceneBuilder.fxml"));
 //			BorderPane root = new BorderPane();
 			Scene scene = new Scene(root, 1000, 1000);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
