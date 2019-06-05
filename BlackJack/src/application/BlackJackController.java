@@ -30,7 +30,8 @@ import models.Player;
 
 public class BlackJackController implements Initializable{
 	ObservableList<String> options = FXCollections.observableArrayList("1 Player", "2 Players", "3 Players", "4 Players");
-	public Player[] players;
+	public int thePot = 0;
+	public Player players;
     @FXML
     private VBox vBox;
 
@@ -123,27 +124,52 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void betFifty(MouseEvent event) {
-
+    	if(players.getChips() > 50) {
+    		thePot += 50;
+    		players.setChips(players.getChips()-50);
+    	}else {
+    		System.out.println("not enough");
+    	}
     }
 
     @FXML
     void betFive(MouseEvent event) {
-
+    	if(players.getChips() > 5) {
+    		thePot += 5;
+    		players.setChips(players.getChips()-5);
+    	}else {
+    		System.out.println("not enough");
+    	}
     }
 
     @FXML
     void betHundo(MouseEvent event) {
-
+    	if(players.getChips() > 100) {
+    		thePot += 100;
+    		players.setChips(players.getChips()-100);
+    	}else {
+    		System.out.println("not enough");
+    	}
     }
 
     @FXML
     void betOne(MouseEvent event) {
-
+    	if(players.getChips() > 1) {
+    		thePot += 1;
+    		players.setChips(players.getChips()-1);
+    	}else {
+    		System.out.println("not enough");
+    	}
     }
 
     @FXML
     void betTen(MouseEvent event) {
-
+    	if(players.getChips() > 10) {
+    		thePot += 10;
+    		players.setChips(players.getChips()-10);
+    	}else {
+    		System.out.println("not enough");
+    	}
     }
     
     
@@ -178,7 +204,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void clickLoadGame(ActionEvent event) {
-    	Main.players = (Player[]) ConsoleIO.DeSerialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", Main.players);
+    	players = (Player) ConsoleIO.DeSerialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", players);
     }
 
     @FXML
@@ -198,7 +224,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void clickSaveGame(ActionEvent event) {
-    	ConsoleIO.Serialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", Main.players);
+    	ConsoleIO.Serialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", players);
     }
 
     @FXML
@@ -223,7 +249,7 @@ public class BlackJackController implements Initializable{
     	if(playerName == null || playerName.isEmpty()) {
     		playerName = "Player " + i;
     	}
-    	players[0] = new Player(playerName, 100);
+    	players = new Player(playerName, 100);
     }
     
     @FXML
@@ -233,7 +259,7 @@ public class BlackJackController implements Initializable{
     		if(playerName == null || playerName.isEmpty()) {
         		playerName = "Player " + i;
         	}
-    		players[i] = new Player(playerName, 100);
+//    		players[i] = new Player(playerName, 100);
     	}
     }
     
@@ -244,7 +270,7 @@ public class BlackJackController implements Initializable{
     		if(playerName == null || playerName.isEmpty()) {
         		playerName = "Player " + i;
         	}
-    		players[i] = new Player(playerName, 100);
+//    		players[i] = new Player(playerName, 100);
     	}
     }
     
@@ -255,7 +281,7 @@ public class BlackJackController implements Initializable{
     		if(playerName == null || playerName.isEmpty()) {
         		playerName = "Player " + i;
         	}
-    		players[i] = new Player(playerName, 100);
+//    		players[i] = new Player(playerName, 100);
     	}
     }
 	@Override
