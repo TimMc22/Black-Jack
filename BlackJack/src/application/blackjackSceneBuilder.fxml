@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -12,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vBox" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #00640;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BlackJackController">
+<VBox fx:id="vBox" prefHeight="668.0" prefWidth="1000.0" style="-fx-background-color: #00640;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BlackJackController">
 	<children>
 		<MenuBar fx:id="MenuBar" VBox.vgrow="NEVER">
 			<menus>
@@ -26,6 +24,29 @@
 				</Menu>
 			</menus>
 		</MenuBar>
+
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="658.0" prefWidth="1000.0" style="-fx-background-color: #006400;">
+			<children>
+            <ImageView fitHeight="658.0" fitWidth="1000.0" layoutX="10.0" opacity="0.55" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../PNG/Table.jpg" />
+               </image>
+            </ImageView>
+				<MenuBar fx:id="MenuBar" layoutX="379.0" layoutY="55.0" VBox.vgrow="NEVER">
+					<menus>
+						<Menu fx:id="menu" mnemonicParsing="false" onAction="#clickMenu" text="Selet Number of Players">
+							<items>
+								<MenuItem fx:id="onePlayer" mnemonicParsing="false" onAction="#clickOnePlayer" text="1 Player" />
+								<MenuItem fx:id="twoPlayers" mnemonicParsing="false" onAction="#clickTwoPlayers" text="2 Players" />
+								<MenuItem fx:id="threePlayers" mnemonicParsing="false" onAction="#clickThreePlayers" text="3 Players" />
+								<MenuItem fx:id="fourPlayers" mnemonicParsing="false" onAction="#clickFourPlayers" text="4 Players" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+            <TextField layoutX="379.0" layoutY="20.0" prefHeight="26.0" prefWidth="160.0" promptText="Name/Game Name" />
+				<Button fx:id="stayButton" alignment="CENTER" layoutX="829.0" layoutY="564.0" mnemonicParsing="false" onAction="#stayClick" style="-fx-background-color: #000000;" text="Stay" textFill="WHITE">
+
 		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #006400;">
 			<ButtonBar buttonMinWidth="0.0" prefHeight="200.0" style="-fx-background-color: #006400;">
 				<buttons>
@@ -44,39 +65,117 @@
 		<ButtonBar buttonMinWidth="0.0" prefHeight="200.0" style="-fx-background-color: #006400;">
 			<buttons>
 				<Button fx:id="stayButton" alignment="CENTER" mnemonicParsing="false" onAction="#stayClick" style="-fx-background-color: #000000;" text="Stay" textFill="WHITE">
+
 					<font>
 						<Font name="Berlin Sans FB" size="18.0" />
 					</font>
 				</Button>
-				<Button fx:id="hitButton" alignment="CENTER" mnemonicParsing="false" onAction="#clickHit" snapToPixel="false" style="-fx-background-color: #000000;" text="Hit" textFill="WHITE">
+				<Button fx:id="hitButton" alignment="CENTER" layoutX="910.0" layoutY="564.0" mnemonicParsing="false" onAction="#clickHit" snapToPixel="false" style="-fx-background-color: #000000;" text="Hit" textFill="WHITE">
 					<font>
 						<Font name="Berlin Sans FB" size="18.0" />
 					</font>
 				</Button>
-			</buttons>
-			<padding>
-				<Insets right="435.0" />
-			</padding>
-			<opaqueInsets>
-				<Insets />
-			</opaqueInsets>
-		</ButtonBar>
-		<ButtonBar buttonMinWidth="0.0" layoutX="10.0" layoutY="723.0" prefHeight="200.0" style="-fx-background-color: #006400;">
-			<buttons>
-				<Button fx:id="doubleDownButton" alignment="CENTER" mnemonicParsing="false" onAction="#clickDoubleDown" style="-fx-background-color: #000000;" text="Double Down" textFill="WHITE">
+				<Button fx:id="doubleDownButton" alignment="CENTER" layoutX="760.0" layoutY="611.0" mnemonicParsing="false" onAction="#clickDoubleDown" style="-fx-background-color: #000000;" text="Double Down" textFill="WHITE">
 					<font>
 						<Font name="Berlin Sans FB" size="18.0" />
 					</font>
 				</Button>
-				<Button fx:id="splitButton" alignment="CENTER" layoutX="100.0" mnemonicParsing="false" onAction="#clickSplit" style="-fx-background-color: #000000;" text="Split" textAlignment="CENTER" textFill="WHITE">
+				<Button fx:id="splitButton" alignment="CENTER" layoutX="910.0" layoutY="611.0" mnemonicParsing="false" onAction="#clickSplit" style="-fx-background-color: #000000;" text="Split" textAlignment="CENTER" textFill="WHITE">
 					<font>
 						<Font name="Berlin Sans FB" size="18.0" />
 					</font>
 				</Button>
-			</buttons>
-			<padding>
-				<Insets right="365.0" />
-			</padding>
-		</ButtonBar>
+            <ImageView fx:id="dealerCardFour" fitHeight="125.0" fitWidth="82.0" layoutX="469.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/2C.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dealerCardSix" fitHeight="125.0" fitWidth="82.0" layoutX="678.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/2D.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dealerCardThree" fitHeight="125.0" fitWidth="82.0" layoutX="367.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/2H.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dealerCardTwo" fitHeight="125.0" fitWidth="82.0" layoutX="266.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/2S.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dealerCardOne" fitHeight="125.0" fitWidth="82.0" layoutX="165.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/3C.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="dealerCardFive" fitHeight="125.0" fitWidth="82.0" layoutX="572.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/3D.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardOne" fitHeight="125.0" fitWidth="82.0" layoutX="165.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/3H.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardTwo" fitHeight="125.0" fitWidth="82.0" layoutX="266.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/3S.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardThree" fitHeight="125.0" fitWidth="82.0" layoutX="367.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/4C.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardFour" fitHeight="125.0" fitWidth="82.0" layoutX="469.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/4D.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardFive" fitHeight="125.0" fitWidth="82.0" layoutX="572.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/4H.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="playerCardSix" fitHeight="125.0" fitWidth="82.0" layoutX="678.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/4S.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="125.0" fitWidth="82.0" layoutX="56.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../PNG/purple_back.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ones" fitHeight="125.0" fitWidth="117.0" layoutX="14.0" layoutY="531.0" onMouseClicked="#betOne" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../chips/1whChip.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="fives" fitHeight="125.0" fitWidth="117.0" layoutX="147.0" layoutY="531.0" onMouseClicked="#betFive" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../chips/5rdChip.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="tens" fitHeight="117.0" fitWidth="117.0" layoutX="279.0" layoutY="531.0" onMouseClicked="#betTen" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../chips/10pkChip.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="fifties" fitHeight="117.0" fitWidth="117.0" layoutX="427.0" layoutY="531.0" onMouseClicked="#betFifty" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../chips/50gnChip.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="hundreds" fitHeight="117.0" fitWidth="117.0" layoutX="554.0" layoutY="531.0" onMouseClicked="#betHundo" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../chips/100blChip.png" />
+               </image>
+            </ImageView>
+			</children>
+		</AnchorPane>
 	</children>
 </VBox>

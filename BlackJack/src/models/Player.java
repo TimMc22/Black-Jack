@@ -1,9 +1,10 @@
 package models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Player {
+public class Player implements Serializable{
 
 	private String name;
 	// have it so every player starts with 100 chips
