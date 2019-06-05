@@ -124,7 +124,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void betFifty(MouseEvent event) {
-    	if(players.getChips() > 50) {
+    	if(players.getChips() > 49) {
     		thePot += 50;
     		players.setChips(players.getChips()-50);
     	}else {
@@ -134,7 +134,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void betFive(MouseEvent event) {
-    	if(players.getChips() > 5) {
+    	if(players.getChips() > 4) {
     		thePot += 5;
     		players.setChips(players.getChips()-5);
     	}else {
@@ -144,7 +144,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void betHundo(MouseEvent event) {
-    	if(players.getChips() > 100) {
+    	if(players.getChips() > 99) {
     		thePot += 100;
     		players.setChips(players.getChips()-100);
     	}else {
@@ -154,7 +154,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void betOne(MouseEvent event) {
-    	if(players.getChips() > 1) {
+    	if(players.getChips() > 0) {
     		thePot += 1;
     		players.setChips(players.getChips()-1);
     	}else {
@@ -164,7 +164,7 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void betTen(MouseEvent event) {
-    	if(players.getChips() > 10) {
+    	if(players.getChips() > 9) {
     		thePot += 10;
     		players.setChips(players.getChips()-10);
     	}else {
@@ -204,7 +204,12 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void clickLoadGame(ActionEvent event) {
-    	players = (Player) ConsoleIO.DeSerialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", players);
+    	String text1 = JOptionPane.showInputDialog("Please enter your name of your game: ");
+    	if(text1 == null || text1.isEmpty()) {
+    		text1 = "game";
+    	}
+    	String filePath = "C:\\Users\\Christian\\Documents\\GitHub\\Black-Jack\\Black-Jack\\BlackJack\\" + text1 + ".chp";
+    	players = (Player) ConsoleIO.DeSerialize(filePath, players);
     }
 
     @FXML
@@ -224,12 +229,17 @@ public class BlackJackController implements Initializable{
 
     @FXML
     void clickSaveGame(ActionEvent event) {
-    	ConsoleIO.Serialize("C:/Users/Public/Desktop/Chips/" + text + ".chp", players);
+    	String text1 = JOptionPane.showInputDialog("Please enter your name of your game: ");
+    	if(text1 == null || text1.isEmpty()) {
+    		text1 = "game";
+    	}
+    	String filePath = "C:\\Users\\Christian\\Documents\\GitHub\\Black-Jack\\Black-Jack\\BlackJack\\" + text1 + ".chp";
+    	ConsoleIO.Serialize(filePath, players);
     }
 
     @FXML
     void clickSplit(ActionEvent event) {
-
+    	
     }
 
     @FXML
