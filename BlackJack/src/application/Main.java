@@ -2,15 +2,16 @@ package application;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import javax.swing.JOptionPane;
+
 //import javax.swing.JButton;
 //import javax.swing.JPanel;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import models.Card;
 import models.Dealer;
 import models.Deck;
@@ -29,12 +30,13 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			VBox root = (VBox) FXMLLoader.load(getClass().getResource("/application/blackjackSceneBuilder.fxml"));
+			VBox root = FXMLLoader.<VBox>load(getClass().getResource("/application/blackjackSceneBuilder.fxml"));
 //			BorderPane root = new BorderPane();
 			Scene scene = new Scene(root, 1000, 1000);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			int players = numOfPlayers();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -45,18 +47,46 @@ public class Main extends Application {
 		launch(args);
 	}
 
+	public int numOfPlayers() {
+
+		int numberPlayer = 0;
+		String playerName = "";
+
+		while (numberPlayer <= 0) {
+			try {
+				numberPlayer = Integer.parseInt(JOptionPane.showInputDialog("Please enter the number of player: "));
+			} catch (NumberFormatException ex) {
+				numberPlayer = 0;
+			}
+
+			for (int i = 0; i < numberPlayer; i++) {
+				playerName = JOptionPane.showInputDialog("Please enter the player name: ");
+				if (playerName.isEmpty()) {
+					playerName = "Player " + i;
+				}
+			}
+		}
+		return numberPlayer;
+	} 
+	
 	public static void makePlayers() {
 		// need to populate the dropdown menu with 1,2,3,4
 		// ask players for name
 		// populate players into array accordingly
 		int numPlayers = 3;
-		// info from dropdown menu
 		for (int i = 0; i < numPlayers; i++) {
-
 			// ask for name
 			String name = "Name";
+			if(name == "") {
+				name = "Player " + i;
+			}
 
 			Player player = new Player(name, 100);
+			//ask for num chips
+			int numChips = 100;
+			player = new Player(name, numChips);
+			//ask for num chips
+			player = new Player(name, 100);
 			players[i] = player;
 		}
 		gameStart(players);
@@ -78,7 +108,7 @@ public class Main extends Application {
 		for (int i = 0; i < players.length; i++) {
 			Dealer.dealHand();
 			boolean canSplit = checkForSplit(players[i]);
-
+			
 			// tell gui to ask for split here
 			if (canSplit) {
 				splitHand(players[i].getHand(), players[i]);
@@ -87,6 +117,7 @@ public class Main extends Application {
 			}
 
 		}
+		
 		int stayCount = 0;
 		boolean[] stay = new boolean[players.length];
 		for (int i = 0; i < players.length; i++) {
@@ -211,7 +242,6 @@ public class Main extends Application {
 
 	public static int makeBet() {
 		int bet = 0;
-
 		return bet;
 	}
 
@@ -250,11 +280,4 @@ public class Main extends Application {
 		player.setChips(chipsWon + player.getChips());
 	}
 
-	public static void saveChips() {
-		
-	}
-
-	public static void loadChips() {
-
-	}
 }

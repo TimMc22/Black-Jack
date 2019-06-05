@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -25,6 +24,7 @@
 				</Menu>
 			</menus>
 		</MenuBar>
+
 		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="658.0" prefWidth="1000.0" style="-fx-background-color: #006400;">
 			<children>
             <ImageView fitHeight="658.0" fitWidth="1000.0" layoutX="10.0" opacity="0.55" pickOnBounds="true">
@@ -46,6 +46,26 @@
 				</MenuBar>
             <TextField layoutX="379.0" layoutY="20.0" prefHeight="26.0" prefWidth="160.0" promptText="Name/Game Name" />
 				<Button fx:id="stayButton" alignment="CENTER" layoutX="829.0" layoutY="564.0" mnemonicParsing="false" onAction="#stayClick" style="-fx-background-color: #000000;" text="Stay" textFill="WHITE">
+
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #006400;">
+			<ButtonBar buttonMinWidth="0.0" prefHeight="200.0" style="-fx-background-color: #006400;">
+				<buttons>
+					<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #006400;">
+						<children>
+							<ImageView fitHeight="658.0" fitWidth="1000.0" opacity="0.55" pickOnBounds="true">
+								<image>
+                           <Image url="@../../../PNG/Table.jpg" />
+								</image>
+							</ImageView>
+						</children>
+					</AnchorPane>
+				</buttons>
+			</ButtonBar>
+		</AnchorPane>
+		<ButtonBar buttonMinWidth="0.0" prefHeight="200.0" style="-fx-background-color: #006400;">
+			<buttons>
+				<Button fx:id="stayButton" alignment="CENTER" mnemonicParsing="false" onAction="#stayClick" style="-fx-background-color: #000000;" text="Stay" textFill="WHITE">
+
 					<font>
 						<Font name="Berlin Sans FB" size="18.0" />
 					</font>

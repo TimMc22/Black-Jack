@@ -56,7 +56,7 @@ public class Player implements Serializable{
 	}
 
 	public static void placeBet(int bet) {
-
+		
 	}
 
 	public Card hit() {
