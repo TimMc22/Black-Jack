@@ -1,9 +1,10 @@
 package models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Player {
+public class Player implements Serializable{
 
 	private String name;
 	// have it so every player starts with 100 chips
@@ -25,12 +26,7 @@ public class Player {
 	}
 
 	public int getChips() {
-		if (chips <= 0) {
-			goBust();
-			return 0;
-		} else {
-			return chips;
-		}
+		return chips;
 	}
 
 	public void setChips(int chips) {
@@ -45,17 +41,9 @@ public class Player {
 		this.hand = hand;
 	}
 
-	public boolean goBust() {
-		if (getChips() <= 0) {
-			return true;
-		} else {
-			return false;
-		}
-
-	}
 
 	public static void placeBet(int bet) {
-
+		
 	}
 
 	public Card hit() {
